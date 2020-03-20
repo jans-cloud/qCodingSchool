@@ -1,0 +1,22 @@
+<mat-drawer-container class="example-container">
+  <mat-drawer mode="side" opened>
+    <section class="sidenav-button-active sidenav-button-hover">
+      <button mat-button>
+        <mat-icon>equalizer</mat-icon>
+      </button>
+    </section>
+    <section class="sidenav-button-hover">
+      <button mat-button>
+        <mat-icon>home</mat-icon>
+      </button>
+    </section>
+    <section class="sidenav-button-hover">
+      <button mat-button>
+        <mat-icon>account_balance</mat-icon>
+      </button>
+    </section>
+  </mat-drawer>
+  <mat-drawer-content class="dotted-background">
+    <ng-content></ng-content>
+  </mat-drawer-content>
+</mat-drawer-container>

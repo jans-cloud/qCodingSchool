@@ -1,0 +1,47 @@
+
+.background {
+  height: 100vh;
+  width: 100vw;
+}
+
+.label {
+  margin: 10px 0 15px 0;
+  font-size: 1.6em;
+}
+
+.address-label {
+  margin: 10px 0 15px 0;
+  font-size: 1.2em;
+}
+
+.button {
+  margin: 15px 0 10px 0;
+}
+
+form {
+  margin: 0 15px;
+}
+
+.login-form {
+  margin-top: 35px;
+}
+
+mat-radio-group {
+  padding: 20px 10px;
+}
+
+mat-radio-button {
+  margin: 0px 10px;
+}
+
+.mat-stepper-horizontal {
+  margin-top: 8px;
+}
+
+.mat-form-field {
+  margin-top: 16px;
+}
+
+.hide-element {
+  display: none !important;
+}

@@ -1,0 +1,71 @@
+<mat-card *ngIf="!accountCreatedMessage && !accountErrorMessage" color="primary" [@formInsertRemoveTrigger]="state" class="login-form">
+  <mat-label fxLayout="column" fxLayoutAlign="center center"><span class="label">Jetzt ein Monat kostenlos testen</span></mat-label>
+  <!--Form One-->
+  <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" fxLayout="column" fxLayoutAlign="center center">
+    <div fxLayout="column" fxLayoutAlign="center start">
+      <div class="error-field" *ngIf="registerForm.get('password').touched || registerForm.get('email').touched">
+        <div [@errorGrow]="state" *ngIf="registerForm.get('email').touched">
+          <mat-error *ngIf="registerForm.get('email').errors && (registerForm.get('email').errors.required || registerForm.get('email').errors.email)">Bitte geben Sie eine valide Email Adresse ein.</mat-error>
+          <mat-error *ngIf="registerForm.get('email').errors && registerForm.get('email').errors.emailAlreadyExists">Die Email Adresse ist bereits registriert.</mat-error>
+        </div>
+        <div [@errorGrow]="state" *ngIf="registerForm.get('password').touched">
+          <mat-error *ngIf="registerForm.get('password').errors && (registerForm.get('password').errors.required ||registerForm.get('password').errors.minLength)">Das Passwort muss mindestens 8 Zeichen lang sein.</mat-error>
+          <mat-error *ngIf="registerForm.get('password').errors && registerForm.get('password').errors.noNumberIncluded">Das Passwort muss mindestens 1 Ziffer enthalten.</mat-error>
+          <mat-error *ngIf="registerForm.get('password').errors && registerForm.get('password').errors.noLetterIncluded">Das Passwort muss mindestens 1 Buchstaben enthalten.</mat-error>
+        </div>
+      </div>
+      <mat-form-field>
+        <mat-label>Email</mat-label>
+        <input matInput formControlName="email">
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Passwort</mat-label>
+        <input matInput [type]="hidePassword ? 'password' : 'text'" formControlName="password">
+        <mat-icon class="hide-pwicon" matSuffix (click)="hidePassword = !hidePassword">{{hidePassword ? 'visibility_off' : 'visibility'}}</mat-icon>
+      </mat-form-field>
+      <div class="dsgvo-checkbox" fxLayout fxLayoutAlign="start center">
+        <mat-checkbox formControlName="dsgvo"></mat-checkbox>
+        <span class="datenschutz"><a> Datenschutz-</a> und <a>Allgemeinen Geschäftsbedingungen</a> zustimmen</span>
+      </div>
+      <div class="form-button-register" fxLayout fxLayoutAlign="center center" style="width: 200px;">
+        <button mat-flat-button color="accent" type="submit" [disabled]="!(registerForm.status==='VALID')">Registrieren</button>
+      </div>
+      <div class="form-button-signin" fxLayout fxLayoutAlign="center center" style="width: 200px;">
+        <span class="sign-in-label">Du hast bereits einen Account?<br> <a [routerLink]="['/app/login']">Sign in.</a></span>
+      </div>
+    </div>
+  </form>
+</mat-card>
+
+<mat-card *ngIf="accountCreatedMessage" color="primary" [@formInsertRemoveTrigger]="state" fxLayout="column" fxLayoutAlign="center center">
+  <mat-label><mat-icon class="message-icon succes-color">email</mat-icon></mat-label>
+  <mat-label fxLayout="column" fxLayoutAlign="center center"><span class="label-message">Registrierung erfolgreich</span></mat-label>
+  <div class="message-fields">
+    <p>
+      Wir haben Ihnen einen Link zum Abschluss Ihrer Registrierung an
+      <span class="font-accent customer-mail">{{customerEmail}}</span>
+      <span fxLayout fxLayoutAlign="center center">gesendet.</span>
+    </p>
+    <p>
+      Bitte bestätigen Sie ihre Email Adresse durch klicken auf den Link.
+    </p>
+  </div>
+</mat-card>
+
+<mat-card *ngIf="accountErrorMessage" color="primary" [@formInsertRemoveTrigger]="state" fxLayout="column" fxLayoutAlign="center center">
+  <mat-label><mat-icon class="message-icon" color="warn">error</mat-icon></mat-label>
+  <mat-label fxLayout="column" fxLayoutAlign="center center">
+    <span class="label-message">
+      Registrierung fehlgeschlagen
+    </span>
+  </mat-label>
+  <div class="message-fields">
+    <p>
+      Leider ist bei Ihrer Registrierung ein Problem aufgetreten.
+    </p>
+    <p>
+      Bitte kontaktieren Sie unseren Support unter
+      <span class="font-accent support-mail" fxLayout fxLayoutAlign="center center">{{supportMail}}</span>
+    </p>
+  </div>
+</mat-card>

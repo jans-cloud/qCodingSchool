@@ -1,0 +1,9 @@
+<button mat-button [matMenuTriggerFor]="setting"><mat-icon>settings</mat-icon></button>
+
+<mat-menu #setting="matMenu">
+  <button mat-menu-item (click)="changeTheme()">
+    <mat-icon>format_color_fill</mat-icon>
+    <span>Theme ändern</span>
+  </button>
+  <!-- <button mat-menu-item>Sprache ändern</button> -->
+</mat-menu>

@@ -1,0 +1,25 @@
+<section fxLayout="row" fxLayoutAlign="center center" class="dotted-background background">
+  <mat-card color="primary" [@formInsertRemoveTrigger]="state" class="login-form">
+    <mat-label fxLayout="column" fxLayoutAlign="center center"><span class="label">Meld dich an</span></mat-label>
+    <!--Form One-->
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="30px">
+      <div fxLayout="column" fxLayoutAlign="center start">
+        <mat-form-field>
+          <mat-label>Email</mat-label>
+          <input matInput formControlName="email">
+          <mat-error>Please enter a valid email address</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Passwort</mat-label>
+          <input matInput [type]="hidePassword ? 'password' : 'text'" formControlName="password">
+          <mat-icon class="hide-pwicon" matSuffix (click)="hidePassword = !hidePassword">{{hidePassword ? 'visibility_off' : 'visibility'}}</mat-icon>
+          <mat-error>Please enter a valid email address</mat-error>
+        </mat-form-field>
+      </div>
+      <div xLayout="column" fxLayoutAlign="center center" fxLayoutGap="35px">
+        <span [routerLink]="['/app/register']"><a>Hier<br>registrieren</a></span>
+        <button mat-raised-button color="accent" type="submit">Login</button>
+      </div>
+    </form>
+  </mat-card>
+</section>
