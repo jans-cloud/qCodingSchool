@@ -13,6 +13,7 @@ import {MatCardModule} from '@angular/material/card';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatRadioModule} from '@angular/material/radio';
 import {MatExpansionModule} from '@angular/material/expansion';
+import {MatTabsModule} from '@angular/material/tabs';
 
 @NgModule({
   exports: [
@@ -30,6 +31,7 @@ import {MatExpansionModule} from '@angular/material/expansion';
     MatMenuModule,
     MatRadioModule,
     MatExpansionModule,
+    MatTabsModule
   ]
 })
 

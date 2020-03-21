@@ -1,9 +1,13 @@
-<button mat-button class="nav-button-hover" [ngClass]="{'nav-button-active': administration}"
-[routerLink]="['/app/administration']">Verwaltung</button>
+<button mat-button class="nav-button-hover" [ngClass]="{'nav-button-active': home}"
+[routerLink]="['/landing']">Home</button>
 
-<button mat-button class="nav-button-hover" [ngClass]="{'nav-button-active': objects}"
-[routerLink]="['/app/objects']">Objekte</button>
+<button mat-button class="nav-button-hover" [ngClass]="{'nav-button-active': learning}"
+[routerLink]="['/learning']">Lernen</button>
 
-<button mat-button class="nav-button-hover" [ngClass]="{'nav-button-active': renter}"
-[routerLink]="['/app/tenants']">Mieter</button>
 
+<button mat-button class="nav-button-hover" [ngClass]="{'nav-button-active': teaching}"
+[routerLink]="['/teaching']">Lehrer</button>
+
+
+<button mat-button class="nav-button-hover" [ngClass]="{'nav-button-active': enterprise}"
+[routerLink]="['/enterprise']">Selbständige</button>

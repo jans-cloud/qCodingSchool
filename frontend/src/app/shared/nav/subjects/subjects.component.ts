@@ -8,34 +8,45 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class SubjectsComponent implements OnInit, DoCheck {
 
-  objects: boolean = false;
-  renter: boolean = false;
-  administration: boolean = false;
+  home: boolean = false;
+  learning: boolean = false;
+  teaching: boolean = false;
+  enterprise: boolean = false;
 
   constructor(private router: Router) { }
 
   ngDoCheck(): void {
     console.log(this.router.url);
     switch(this.router.url) {
-      case '/app/objects':
-        this.objects = true;
-        this.renter = false;
-        this.administration = false;
+      case '/home':
+        this.home = true;
+        this.learning = false;
+        this.teaching = false;
+        this.enterprise = false;
         break;
-      case '/app/tenants':
-        this.objects = false;
-        this.renter = true;
-        this.administration = false;
+      case '/learning':
+        this.home = false;
+        this.learning = true;
+        this.teaching = false;
+        this.enterprise = false;
         break;
-      case '/app/administration':
-        this.objects = false;
-        this.renter = false;
-        this.administration = true;
+      case '/teaching':
+        this.home = false;
+        this.learning = false;
+        this.teaching = true;
+        this.enterprise = false;
+        break;
+      case '/enterprise':
+        this.home = false;
+        this.learning = false;
+        this.teaching = false;
+        this.enterprise = true;
         break;
       default:
-        this.objects = false;
-        this.renter = false;
-        this.administration = false;
+        this.home = false;
+        this.learning = false;
+        this.teaching = false;
+        this.enterprise = false;
         break;
     }
   }

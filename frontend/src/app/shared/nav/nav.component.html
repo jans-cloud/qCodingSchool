@@ -1,10 +1,16 @@
-<mat-toolbar color="primary" fxFlex fxFlexLayout fxLayoutAlign="center center" fxLayoutGap="20px">
+<mat-toolbar color="primary" fxFlex fxFlexLayout fxLayoutAlign="center center" fxLayoutGap="20px" fxHide.lt-md="true" fxShow.gt-md="true">
   <div fxFlex="6">
-    <button mat-button><mat-icon>menu</mat-icon></button>
+    <mat-label>qCodingSchool</mat-label>
   </div>
   <div fxFlex fxFlexLayout fxLayoutAlign="center">
     <app-subjects fxLayoutGap="2em"></app-subjects>
   </div>
   <app-settings></app-settings>
-  <app-login-button></app-login-button>
+</mat-toolbar>
+
+<mat-toolbar color="primary" fxFlex fxFlexLayout fxLayoutAlign="start center" fxLayoutGap="20px" fxShow.sm="true" fxShow.lt-sm="true" fxHide.md="true" fxHide.gt-md="true">
+  <div fxFlex>
+    <app-burgermenu></app-burgermenu>
+  </div>
+  <app-settings></app-settings>
 </mat-toolbar>
