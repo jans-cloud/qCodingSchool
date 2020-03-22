@@ -1,5 +1,6 @@
 
 export const environment = {
   production: false,
-  backendUrl: "http://localhost:3000/",
+  backendUrl: "https://qschool-backend-dev.eu-de.mybluemix.net",
+  supportMail: 'support@qSchool.com',
 };

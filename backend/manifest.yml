@@ -1,0 +1,25 @@
+applications:
+- instances: 1
+  timeout: 180
+  name: qSchool-Backend-prod
+  buildpack: sdk-for-nodejs
+  command: npm run prod
+  memory: 256MB
+  domain: eu-de.mybluemix.net
+  host: qschool-backend
+- instances: 1
+  timeout: 180
+  name: qSchool-Backend-stage
+  buildpack: sdk-for-nodejs
+  command: npm run prod
+  memory: 256MB
+  domain: eu-de.mybluemix.net
+  host: qschool-backend-stage
+- instances: 1
+  timeout: 180
+  name: qSchool-Backend-dev
+  buildpack: sdk-for-nodejs
+  command: npm run prod
+  memory: 256MB
+  domain: eu-de.mybluemix.net
+  host: qschool-backend-dev
