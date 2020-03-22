@@ -1,0 +1,29 @@
+
+<mat-card  *ngIf="!accountErrorMessage" color="primary" [@formInsertRemoveTrigger]="state" fxLayout="column" fxLayoutAlign="center center">
+  <mat-label><mat-icon class="message-icon succes-color">check_circle</mat-icon></mat-label>
+  <mat-label fxLayout fxLayoutAlign="center center"><span class="label-message">Anmeldung abgeschlossen</span></mat-label>
+  <div class="message-fields">
+    <p>
+      Vielen Dank, Ihre Anmeldung war erfolgreich. Weitere Informationen über das Kursangebot erhalten Sie in den nächsten Tagen.
+    </p>
+  </div>
+</mat-card>
+
+
+<mat-card *ngIf="accountErrorMessage" color="primary" [@formInsertRemoveTrigger]="state" fxLayout="column" fxLayoutAlign="center center">
+  <mat-label><mat-icon class="message-icon" color="warn">error</mat-icon></mat-label>
+  <mat-label fxLayout="column" fxLayoutAlign="center center">
+    <span class="label-message">
+      Anmeldung fehlgeschlagen
+    </span>
+  </mat-label>
+  <div class="message-fields">
+    <p>
+      Leider ist bei Ihrer Anmeldung ein Problem aufgetreten.
+    </p>
+    <p>
+      Bitte kontaktieren Sie uns unter
+      <span class="font-accent support-mail" fxLayout fxLayoutAlign="center center">{{supportMail}}</span>
+    </p>
+  </div>
+</mat-card>

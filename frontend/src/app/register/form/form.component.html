@@ -1,0 +1,104 @@
+<mat-card *ngIf="!accountCreatedMessage && !accountErrorMessage" color="primary" [@formInsertRemoveTrigger]="state" class="login-form">
+  <mat-label fxLayout="column" fxLayoutAlign="center center"><span class="label">Jetzt mitmachen!</span></mat-label>
+  <!--Form One-->
+  <cdk-virtual-scroll-viewport itemSize="10" class="scrolling-viewport">
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" fxLayout="column" fxLayoutAlign="center center">
+      <div fxLayout="column" fxLayoutAlign="center start">
+        <div class="error-field" *ngIf="registerForm.get('email').touched || registerForm.get('name').touched || getSkillErrors() || getIndustryErrors()" style="margin: 5px 0 10px 0;">
+          <div [@errorGrow]="state" *ngIf="registerForm.get('email').touched || registerForm.get('name').touched || getSkillErrors() || getIndustryErrors()">
+            <mat-error *ngIf="(registerForm.get('email').errors && (registerForm.get('email').errors.required || registerForm.get('email').errors.email)) && registerForm.get('email').touched">Bitte geben Sie eine valide Email Adresse ein.</mat-error>
+            <mat-error *ngIf="(registerForm.get('email').errors && registerForm.get('email').errors.emailAlreadyExists) && registerForm.get('email').touched">Die Email Adresse ist bereits registriert.</mat-error>
+
+            <mat-error *ngIf="registerForm.get('name').errors && (registerForm.get('name').errors.required) && registerForm.get('name').touched">Bitte geben Sie Ihren Namen ein.</mat-error>
+            <mat-error *ngIf="registerForm.get('name').errors && !(registerForm.get('name').errors.required) && registerForm.get('name').touched">Ihr Name darf maximal 30 Zeichen enthalten.</mat-error>
+            <mat-error *ngIf="getSkillErrors().required">Bitten geben Sie mindestens einen Skill an oder befüllen Sie den ausgewählen Skill.</mat-error>
+            <mat-error *ngIf="getSkillErrors().maxlength">Ihr Skill darf maximal 30 Zeichen enthalten.</mat-error>
+            <mat-error *ngIf="getIndustryErrors().required">Bitten geben Sie eine Branche an.</mat-error>
+            <mat-error *ngIf="getIndustryErrors().maxlength">Ihr Branche darf maximal 30 Zeichen enthalten.</mat-error>
+          </div>
+        </div>
+        <!-- <mat-radio-group formControlName="acctype" style="width: 200px; margin-bottom: 5px;" fxLayout="column" fxLayoutGap="7px" (change)="setupForm()">
+          <mat-radio-button value="learner">Ich möchte Lernen</mat-radio-button>
+          <mat-radio-button value="teacher">Ich möchte Unterrichten</mat-radio-button>
+          <mat-radio-button value="enterprise">Ich bin Selbständiger</mat-radio-button>
+        </mat-radio-group> -->
+        <div fxLayout="column" fxLayoutGap="7px" style="width: 200px; margin-bottom: 5px;">
+          <mat-checkbox formControlName="learner" (change)="setupForm()">Ich möchte Lernen</mat-checkbox>
+          <mat-checkbox formControlName="teacher" (change)="setupForm()">Ich möchte Unterrichten</mat-checkbox>
+          <mat-checkbox formControlName="enterprise" (change)="setupForm()">Ich bin Selbständiger</mat-checkbox>
+        </div>
+        <mat-form-field>
+          <mat-label>Email</mat-label>
+          <input matInput formControlName="email">
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Name</mat-label>
+          <input matInput formControlName="name">
+        </mat-form-field>
+        <div *ngIf="registerForm.value.teacher === true" formArrayName="skills" style="width: 200px;">
+          <mat-form-field *ngFor="let skill of getFormControllArr(); let i = index">
+            <mat-label>Skill</mat-label>
+            <input matInput [formControlName]="i">
+            <mat-icon *ngIf="i !== getFormControllArrLength() - 1 || (getFormControllArrLength()===3)" class="pointer-icon" matSuffix (click)="removeSkill(i)">remove</mat-icon>
+            <mat-icon *ngIf="i === getFormControllArrLength() - 1 && (getFormControllArrLength()!==3)" class="pointer-icon" matSuffix (click)="addSkill()">add</mat-icon>
+          </mat-form-field>
+        </div>
+        <mat-form-field *ngIf="registerForm.value.enterprise === true">
+          <mat-label>Branche</mat-label>
+          <input matInput formControlName="industry">
+        </mat-form-field>
+        <div class="dsgvo-checkbox" fxLayout fxLayoutAlign="start center">
+          <mat-checkbox formControlName="dsgvo"></mat-checkbox>
+          <span class="datenschutz"><a>Datenschutzbedingungen</a> zustimmen</span>
+        </div>
+        <div class="form-button-register" fxLayout fxLayoutAlign="center center" style="width: 200px;">
+          <button mat-flat-button color="accent" type="submit" [disabled]="!(registerForm.status==='VALID')">Anmelden</button>
+        </div>
+      </div>
+    </form>
+  </cdk-virtual-scroll-viewport>
+</mat-card>
+
+<mat-card *ngIf="accountCreatedMessage" color="primary" [@formInsertRemoveTrigger]="state" fxLayout="column" fxLayoutAlign="center center">
+  <mat-label><mat-icon class="message-icon succes-color">email</mat-icon></mat-label>
+  <mat-label fxLayout="column" fxLayoutAlign="center center"><span class="label-message">Anmeldung erfolgreich</span></mat-label>
+  <div class="message-fields">
+    <p>
+      Wir haben Ihnen einen Link zum Abschluss Ihrer Anmeldung an
+      <span class="font-accent customer-mail">{{customerEmail}}</span>
+      <span fxLayout fxLayoutAlign="center center">gesendet.</span>
+    </p>
+    <p>
+      Bitte bestätigen Sie ihre Email Adresse durch klicken auf den Link.
+    </p>
+  </div>
+</mat-card>
+
+<mat-card *ngIf="accountErrorMessage" color="primary" [@formInsertRemoveTrigger]="state" fxLayout="column" fxLayoutAlign="center center">
+  <mat-label><mat-icon class="message-icon" color="warn">error</mat-icon></mat-label>
+  <mat-label fxLayout="column" fxLayoutAlign="center center">
+    <span class="label-message">
+      Anmeldung fehlgeschlagen
+    </span>
+  </mat-label>
+  <div class="message-fields">
+    <p>
+      Leider ist bei Ihrer Anmeldung ein Problem aufgetreten.
+    </p>
+    <p>
+      Bitte kontaktieren Sie unseren Support unter
+      <span class="font-accent support-mail" fxLayout fxLayoutAlign="center center">{{supportMail}}</span>
+    </p>
+  </div>
+</mat-card>
+
+<ngx-spinner
+bdOpacity = 0.7
+bdColor = "rgba(51,51,51,0.7)"
+size = "medium"
+color = "#fff"
+type = "square-jelly-box"
+[fullScreen] = "true"
+>
+<p style="color: white" > Loading... </p>
+</ngx-spinner>

@@ -1,0 +1,116 @@
+
+.label {
+  margin: 15px 30px 15px 30px;
+  font-size: 1.6em;
+  line-height: 1.4;
+}
+
+form {
+  margin: 0 15px;
+}
+
+.login-form {
+  margin-top: 35px;
+}
+
+.mat-form-field {
+  margin: 5px 0;
+}
+
+button {
+  margin: 15px 5px;
+}
+
+span {
+  text-align: center;
+}
+
+mat-card {
+  width: 275px;
+  margin: 0 10px 0 10px;
+  max-height: 65vh;
+}
+
+.hide-pwicon {
+  cursor: pointer;
+}
+
+mat-error {
+  span {
+    font-weight: 700;
+  }
+}
+
+.datenschutz {
+  font-size: 0.8em;
+  padding-left: 7px;
+}
+
+.dsgvo-checkbox {
+  width: 200px;
+  // margin-top: 35px;
+}
+
+.error-field {
+  font-size: 0.7em;
+  width: 200px;
+  line-height: 1.4;
+}
+
+.sign-in-label {
+  font-size: 0.8em;
+  font-weight: 300;
+  a {
+    text-decoration: none;
+    font-size: 1.2em;
+    font-weight: 900;
+  }
+}
+
+.form-button-register {
+  margin: 15px 0 0 0;
+}
+
+.form-button-signin {
+  margin: 0px 0 15px 0;
+}
+
+.message-fields {
+  width: 200px;
+  margin: 20px 0;
+  font-size: 0.9em;
+  font-weight: 500;
+  text-align: center;
+  p {
+    margin-bottom: 20px;
+  }
+}
+
+.label-message {
+  margin: 5px 20px;
+  font-size: 1.6em;
+  line-height: 1.4;
+}
+
+.message-icon {
+  margin: 20px 0px 0px 0px;
+  font-size: 2.5em;
+}
+
+.support-mail {
+  margin: 7px 0;
+  font-size: 1.2em;
+}
+
+.customer-mail {
+  margin: 8px 0;
+  font-size: 1.15em;
+}
+
+.scrolling-viewport {
+  height: 45vh;
+}
+
+.pointer-icon {
+  cursor: pointer;
+}

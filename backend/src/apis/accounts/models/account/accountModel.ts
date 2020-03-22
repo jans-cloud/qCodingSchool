@@ -1,29 +1,19 @@
 
 import mongoose from 'mongoose';
 // eslint-disable-next-line import/extensions
-import config from '../../../../utils/config/accounts';
 
 const { Schema } = mongoose;
 
-const adressSchema = new Schema({
-  zipcode: { type: Number },
-  city: { type: String },
-  street: { type: String },
-});
-
-const roleSchema = new Schema({
-  name: { type: String },
-  permissions: { type: [String], enum: config.permissions },
-});
 
 const accountSchema = new Schema({
   email: { type: String, required: true, unique: true },
-  type: { type: String, enum: ['enterprise', 'private'] },
+  name: { type: String, required: true },
+  learner: { type: Boolean, required: true },
+  teacher: { type: Boolean, required: true },
+  enterprise: { type: Boolean, required: true },
+  industry: { type: String },
+  skills: { type: [String] },
   dsgvo: { type: Boolean, required: true },
-  termsofservice: { type: Boolean, required: true },
-  address: adressSchema,
-  user: [{ type: Schema.Types.ObjectId, ref: 'user' }],
-  roles: [roleSchema],
   created: { type: Date, required: true },
   updated: { type: Date, required: true },
 });

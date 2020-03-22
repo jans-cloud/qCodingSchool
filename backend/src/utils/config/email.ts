@@ -5,19 +5,19 @@ import { EMAIL_SERVER_PW, EMAIL_SERVER_ADDRESS, ENVIRONMENT } from '../env/env';
 let registrationUrl;
 
 if (ENVIRONMENT === 'local') {
-  registrationUrl = 'http://localhost:4200/app/register/confirm?regtoken=';
+  registrationUrl = 'http://localhost:4200/register/confirm?regtoken=';
 }
 
 if (ENVIRONMENT === 'dev') {
-  registrationUrl = 'http://localhost:4200/app/register/confirm?regtoken=';
+  registrationUrl = 'http://localhost:4200/register/confirm?regtoken=';
 }
 
 if (ENVIRONMENT === 'stage') {
-  registrationUrl = 'http://localhost:4200/app/register/confirm?regtoken=';
+  registrationUrl = 'http://localhost:4200/register/confirm?regtoken=';
 }
 
 if (ENVIRONMENT === 'prod') {
-  registrationUrl = 'http://localhost:4200/app/register/confirm?regtoken=';
+  registrationUrl = 'http://localhost:4200/register/confirm?regtoken=';
 }
 
 const config = {

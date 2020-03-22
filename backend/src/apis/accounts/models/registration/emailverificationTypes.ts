@@ -1,31 +1,39 @@
 /* eslint-disable import/extensions */
 /* eslint-disable import/prefer-default-export */
-import { encryptPassword } from '../../shared/passwordService';
 
 class NewEmailVerification {
+  readonly token: string;
+
   readonly email: string;
 
-  readonly token: string;
+  readonly name: string;
+
+  readonly learner: boolean;
+
+  readonly teacher: boolean;
+
+  readonly enterprise: boolean;
+
+  readonly industry: string | undefined;
+
+  readonly skills: [string] | undefined;
 
   readonly dsgvo: boolean;
 
-  readonly termsofservice: boolean;
-
-  readonly password: string;
-
   readonly created: number;
 
-  readonly updated: number;
-
-  constructor(email: string, token: string, dsgvo: boolean,
-    termsofservice: boolean, password: string) {
-    this.email = email;
+  constructor(email: string, name: string, learner: boolean, teacher: boolean,
+    enterprise: boolean, industry: string, skills: [string], dsgvo: boolean, token: string) {
     this.token = token;
+    this.email = email;
+    this.name = name;
+    this.learner = learner;
+    this.teacher = teacher;
+    this.enterprise = enterprise;
+    this.industry = industry;
+    this.skills = skills;
     this.dsgvo = dsgvo;
-    this.termsofservice = termsofservice;
-    this.password = encryptPassword(password);
     this.created = Date.now();
-    this.updated = Date.now();
   }
 }
 

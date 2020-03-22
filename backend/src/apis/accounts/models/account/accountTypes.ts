@@ -3,18 +3,34 @@
 class NewAccount {
   readonly email: string;
 
-  readonly dsgvo: boolean;
+  readonly name: string;
 
-  readonly termsofservice: boolean;
+  readonly learner: boolean;
+
+  readonly teacher: boolean;
+
+  readonly enterprise: boolean;
+
+  readonly industry: string | undefined;
+
+  readonly skills: [string] | undefined;
+
+  readonly dsgvo: boolean;
 
   readonly created: number;
 
   readonly updated: number;
 
-  constructor(email: string, dsgvo: boolean, termsofservice: boolean) {
+  constructor(email: string, name: string, learner: boolean, teacher: boolean,
+    enterprise: boolean, industry: string, skills: [string], dsgvo: boolean) {
     this.email = email;
+    this.name = name;
+    this.learner = learner;
+    this.teacher = teacher;
+    this.enterprise = enterprise;
+    this.industry = industry;
+    this.skills = skills;
     this.dsgvo = dsgvo;
-    this.termsofservice = termsofservice;
     this.created = Date.now();
     this.updated = Date.now();
   }

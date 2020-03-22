@@ -1,12 +1,17 @@
+/* eslint-disable import/extensions */
 /**
  * @module ErrorMiddleware
  */
+
 // Types
 import {
   Application, Request, Response, NextFunction, Errback,
 } from 'express';
 
-const logger = require('../utils/logger/logger');
+
+import getLogger from '../utils/logger/logger';
+
+const logger = getLogger('errorMiddleware');
 
 function handleNotFound(req: Request, res: Response, next: NextFunction) {
   res.sendStatus(404);
@@ -16,7 +21,7 @@ function handleNotFound(req: Request, res: Response, next: NextFunction) {
 
 function handleError(error: Errback, req: Request, res: Response, next: NextFunction) {
   if (error) {
-    console.log('Middleware Error', error);
+    logger.error(`handleError Middleware Error: ${JSON.stringify(error)}`);
     return res.sendStatus(500);
   }
   return next();

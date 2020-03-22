@@ -5,7 +5,6 @@
 import mongoose from 'mongoose';
 // Types
 import { Errback } from 'express';
-import initializeData from './apis/accounts/models/initializeData';
 
 import app from './server';
 import { PORT, DATABASE_URL } from './utils/env/env';
@@ -28,6 +27,5 @@ mongoose.connect(DATABASE_URL!, config, (error: any) => {
     logger.error(`Error while connecting to Database: ${JSON.stringify(error)}`);
   } else {
     logger.info('Connected to Database');
-    initializeData();
   }
 });

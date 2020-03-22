@@ -6,10 +6,13 @@ const { Schema } = mongoose;
 const emailverificationSchema = new Schema({
   email: { type: String, required: true, unique: true },
   token: { type: String, required: true, unique: true },
-  type: { type: String, enum: ['enterprise', 'private'] },
-  password: { type: String },
+  name: { type: String, required: true },
+  learner: { type: Boolean, required: true },
+  teacher: { type: Boolean, required: true },
+  enterprise: { type: Boolean, required: true },
+  industry: { type: String },
+  skills: { type: [String] },
   dsgvo: { type: Boolean, required: true },
-  termsofservice: { type: Boolean, required: true },
   created: { type: Date, required: true, expires: 1800 },
 });
 

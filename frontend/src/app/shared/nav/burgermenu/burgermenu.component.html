@@ -1,7 +1,5 @@
 <button mat-button [matMenuTriggerFor]="menu"><mat-icon>menu</mat-icon></button>
 <mat-menu #menu="matMenu">
   <button mat-menu-item [routerLink]="['/landing']" *ngIf="home">Home</button>
-  <button mat-menu-item [routerLink]="['/learning']" *ngIf="learner">Lernen</button>
-  <button mat-menu-item [routerLink]="['/teaching']" *ngIf="teacher">Lehrer</button>
-  <button mat-menu-item [routerLink]="['/enterprise']" *ngIf="coperate">Selbständige</button>
+  <button mat-menu-item [routerLink]="['/register']" *ngIf="register">Registrieren</button>
 </mat-menu>

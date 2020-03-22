@@ -9,46 +9,24 @@ import { Router } from '@angular/router';
 export class BurgermenuComponent implements OnInit, DoCheck {
 
   home: boolean;
-  learner: boolean;
-  teacher: boolean;
-  coperate: boolean;
+  register: boolean;
   constructor(private router: Router) { }
 
   ngOnInit(): void {
   }
 
   ngDoCheck(): void {
-    console.log(this.router.url);
     switch(this.router.url) {
       case '/home':
         this.home = false;
-        this.learner = true;
-        this.teacher = true;
-        this.coperate = true;
+        this.register = true;
         break;
-      case '/learner':
+      case '/register':
         this.home = true;
-        this.learner = false;
-        this.teacher = true;
-        this.coperate = true;
-        break;
-      case '/teacher':
-        this.home = true;
-        this.learner = true;
-        this.teacher = false;
-        this.coperate = true;
-        break;
-      case '/coperate':
-        this.home = true;
-        this.learner = true;
-        this.teacher = true;
-        this.coperate = false;
-        break;
+        this.register = false;
       default:
         this.home = true;
-        this.learner = true;
-        this.teacher = true;
-        this.coperate = true;
+        this.register = true;
         break;
     }
   }
