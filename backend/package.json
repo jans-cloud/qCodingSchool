@@ -11,6 +11,10 @@
     "build": "tsc",
     "prod": "NODE_ENV=production node dist/index.js"
   },
+  "engines": {
+    "node": "12.16.1",
+    "npm": "6.13.4"
+  },
   "author": "",
   "license": "",
   "devDependencies": {
