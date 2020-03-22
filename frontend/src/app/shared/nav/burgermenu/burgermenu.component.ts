@@ -17,6 +17,10 @@ export class BurgermenuComponent implements OnInit, DoCheck {
 
   ngDoCheck(): void {
     switch(this.router.url) {
+      case '/':
+        this.home = false;
+        this.register = true;
+        break;
       case '/home':
         this.home = false;
         this.register = true;
@@ -24,6 +28,11 @@ export class BurgermenuComponent implements OnInit, DoCheck {
       case '/register':
         this.home = true;
         this.register = false;
+        break;
+      case '/register/form':
+          this.home = true;
+          this.register = false;
+          break;
       default:
         this.home = true;
         this.register = true;

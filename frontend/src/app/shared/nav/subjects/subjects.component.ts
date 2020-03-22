@@ -16,11 +16,19 @@ export class SubjectsComponent implements OnInit, DoCheck {
 
   ngDoCheck(): void {
     switch(this.router.url) {
+      case '/':
+        this.home = true;
+        this.register = false;
+        break;
       case '/home':
         this.home = true;
         this.register = false;
         break;
       case '/register':
+        this.home = false;
+        this.register = true;
+        break;
+      case '/register/form':
         this.home = false;
         this.register = true;
         break;
