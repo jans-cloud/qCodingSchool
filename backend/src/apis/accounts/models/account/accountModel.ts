@@ -14,7 +14,7 @@ const accountSchema = new Schema({
   industry: { type: String },
   skills: { type: [String] },
   dsgvo: { type: Boolean, required: true },
-  created: { type: Date, required: true },
+  created: { type: Date, required: true, expires: 180 },
   updated: { type: Date, required: true },
 });
 
