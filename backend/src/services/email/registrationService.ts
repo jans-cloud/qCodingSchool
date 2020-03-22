@@ -8,9 +8,9 @@ import getLogger from '../../utils/logger/logger';
 const logger = getLogger('registrationService');
 
 const registrationMailOption = {
-  from: 'no-reply@sqrmeters.com',
+  from: 'jan.klaedtke@qschool.de',
   to: '',
-  subject: 'sqrmeter Registration',
+  subject: 'qSchool Anmeldung',
   html: '',
 };
 
