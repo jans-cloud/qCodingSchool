@@ -9,7 +9,7 @@ if (ENVIRONMENT === 'local') {
 }
 
 if (ENVIRONMENT === 'dev') {
-  registrationUrl = 'http://localhost:4200/register/confirm?regtoken=';
+  registrationUrl = 'https://qschool-dev.eu-gb.mybluemix.net/register/confirm?regtoken=';
 }
 
 if (ENVIRONMENT === 'stage') {
