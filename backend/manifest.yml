@@ -5,7 +5,7 @@ applications:
   buildpack: sdk-for-nodejs
   command: npm run prod
   memory: 256MB
-  domain: eu-de.mybluemix.net
+  domain: eu-gb.mybluemix.net
   host: qschool-backend
 - instances: 1
   timeout: 180
@@ -13,7 +13,7 @@ applications:
   buildpack: sdk-for-nodejs
   command: npm run prod
   memory: 256MB
-  domain: eu-de.mybluemix.net
+  domain: eu-gb.mybluemix.net
   host: qschool-backend-stage
 - instances: 1
   timeout: 180
@@ -21,5 +21,5 @@ applications:
   buildpack: sdk-for-nodejs
   command: npm run prod
   memory: 256MB
-  domain: eu-de.mybluemix.net
+  domain: eu-gb.mybluemix.net
   host: qschool-backend-dev
