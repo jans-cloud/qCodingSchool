@@ -11,6 +11,8 @@ import { PORT, DATABASE_URL } from './utils/env/env';
 import config from './utils/config/mongodb';
 import getLogger from './utils/logger/logger';
 
+import deleteTestData from './services/cronjobs/deleteTestData';
+
 const logger = getLogger('index');
 
 app.listen(PORT!, (error: Errback) => {
@@ -27,5 +29,6 @@ mongoose.connect(DATABASE_URL!, config, (error: any) => {
     logger.error(`Error while connecting to Database: ${JSON.stringify(error)}`);
   } else {
     logger.info('Connected to Database');
+    deleteTestData();
   }
 });
