@@ -15,6 +15,7 @@ import {MatRadioModule} from '@angular/material/radio';
 import {MatExpansionModule} from '@angular/material/expansion';
 import {MatTabsModule} from '@angular/material/tabs';
 import {ScrollingModule} from '@angular/cdk/scrolling';
+import {MatDividerModule} from '@angular/material/divider';
 
 @NgModule({
   exports: [
@@ -33,7 +34,8 @@ import {ScrollingModule} from '@angular/cdk/scrolling';
     MatRadioModule,
     MatExpansionModule,
     MatTabsModule,
-    ScrollingModule
+    ScrollingModule,
+    MatDividerModule
   ]
 })
 
