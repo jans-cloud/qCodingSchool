@@ -1,0 +1,43 @@
+.background {
+  margin: 5vh 0 0 0;
+  height: 80vh;
+  width: 100vw;
+}
+
+
+.scrolling-viewport {
+  height: 55vh;
+}
+
+.scrolling-viewport-mobile {
+  height: 45vh;
+}
+
+.card-class {
+  width: 275px;
+  margin: 0 10px 0 10px;
+  max-height: 65vh;
+}
+
+.label {
+  margin: 15px 30px 15px 30px;
+  font-size: 1.5em;
+  line-height: 1.4;
+  text-align: center;
+}
+
+.text-format {
+  text-align: justify;
+}
+
+.text-padding {
+  padding: 0 15px;
+}
+
+.text-devider {
+  padding-top: 10px;
+}
+
+mat-list-item {
+  font-weight: 900 !important;
+}
