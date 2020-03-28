@@ -205,17 +205,6 @@ $dark-theme: mat-dark-theme(
   }
 
   .dotted-background {
-    // $bg-color: mat-color($primary, 500);
-    // $dot-color: mat-contrast($primary, 500);
-
-    // // Dimensions
-    // $dot-size: 1px;
-    // $dot-space: 40px;
-    // background: linear-gradient(90deg, $bg-color ($dot-space - $dot-size), transparent 1%) center,
-		// linear-gradient($bg-color ($dot-space - $dot-size), transparent 1%) center,
-		// $dot-color;
-    // background-size: $dot-space $dot-space;
-    // Dotted Points
     background-image: radial-gradient(mat-contrast($primary, 500) 4%, mat-color($primary, 500) 3%);
     background-position: 0 0;
     background-size: 25px 25px;

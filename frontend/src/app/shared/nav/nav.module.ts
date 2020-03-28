@@ -10,6 +10,7 @@ import { MaterialModules } from '../../material-modules';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { SubjectsComponent } from './subjects/subjects.component';
 import { BurgermenuComponent } from './burgermenu/burgermenu.component';
+import { LogoComponent } from './logo/logo.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { BurgermenuComponent } from './burgermenu/burgermenu.component';
     SettingsComponent,
     SubjectsComponent,
     BurgermenuComponent,
+    LogoComponent,
   ],
   imports: [
     CommonModule,

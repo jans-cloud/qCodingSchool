@@ -27,6 +27,6 @@ import { MaterialModules } from './material-modules';
     BrowserModule,
     FlexLayoutModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule { }

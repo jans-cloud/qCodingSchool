@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 
 import { FooterComponent } from './footer.component';
 
@@ -13,7 +14,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
   imports: [
     CommonModule,
     MaterialModules,
-    FlexLayoutModule
+    FlexLayoutModule,
+    RouterModule
   ],
   exports: [FooterComponent],
 })

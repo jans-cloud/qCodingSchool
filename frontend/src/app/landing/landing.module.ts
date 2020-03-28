@@ -10,10 +10,12 @@ import { FooterModule } from '../shared/footer/footer.module'
 import { MaterialModules } from '../material-modules';
 
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { TitleComponent } from './title/title.component';
 
 @NgModule({
   declarations: [
     LandingComponent,
+    TitleComponent,
   ],
   imports: [
     CommonModule,
