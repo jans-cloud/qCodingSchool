@@ -111,7 +111,8 @@ mat-error {
 }
 
 .scrolling-viewport {
-  height: 40vh;
+  height: 50vh;
+  max-height: 375px;
 }
 
 .pointer-icon {
