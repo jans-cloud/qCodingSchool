@@ -3,7 +3,7 @@
     <a href="https://www.instagram.com/jans_cloud/"><mat-icon class="icon-display" svgIcon="insta"></mat-icon></a>
     <a href="https://www.linkedin.com/in/jan-k-86a17a164/"><mat-icon class="icon-display" svgIcon="linkedin"></mat-icon></a>
   </div>
-  <div  fxLayout="column" fxLayoutAlign="center center">
+  <div  fxLayout="column" fxLayoutAlign="center center" fxHide.lt-md="true" fxShow.gt-md="true">
     <a [routerLink]="['/impressum']">Impressum</a>
     <a [routerLink]="['/dsgvo']">DSGVO</a>
   </div>

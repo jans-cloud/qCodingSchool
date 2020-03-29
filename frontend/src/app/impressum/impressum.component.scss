@@ -10,20 +10,25 @@
 }
 
 .scrolling-viewport-mobile {
-  height: 45vh;
+  height: 50vh;
 }
 
 .card-class {
   width: 275px;
   margin: 0 10px 0 10px;
-  max-height: 65vh;
+  max-height: 85vh;
 }
 
 .label {
-  margin: 15px 30px 15px 30px;
+  margin: 20px 30px 20px 30px;
   font-size: 1.5em;
   line-height: 1.4;
   text-align: center;
+}
+
+.mobile-label {
+  font-size: 1.1em;
+  font-weight: 600;
 }
 
 .text-format {
@@ -40,4 +45,16 @@
 
 mat-list-item {
   font-weight: 900 !important;
+}
+
+.app-title {
+  position: absolute;
+  left: 0%;
+}
+
+
+.app-title-mobile {
+  margin-top: 15px;
+  position: absolute;
+  top: 0%;
 }

@@ -1,65 +1,118 @@
 <app-nav></app-nav>
 <section fxLayout="row" fxLayoutAlign="center center" class="dotted-background background" fxShow.sm="true" fxShow.lt-sm="true" fxHide.md="true" fxHide.gt-md="true">
-  <mat-card color="primary" class="card-class">
-    <mat-label fxLayout="column" fxLayoutAlign="center center"><span class="label">Willkommen in der qSchool</span></mat-label>
-    <cdk-virtual-scroll-viewport itemSize="10" class="scrolling-viewport-mobile">
-      <div class="text-format">
-        <p class="text-padding">Viele von uns gehen grade durch Turbulente Zeiten. Langsam ist die Wohnung blitzblank und der Netflix Content ausgeschöpft.
-          Zeit Erwartungs- und Hoffnungsvoll in die Zukunft zu blicken und neue Pläne zu machen.</p>
-        <p class="text-padding">Was bietet sich dafür besser an als neue Skills zu lernen?</p>
-        <p class="text-padding">Für alle die sich beruflich neu orientieren müssen oder neue Skills aufbauen möchten,
-          bietet die qSchool kostenlose online Coding Kurse.</p>
-      </div>
-      <mat-list class="text-format">
-        <mat-list-item>Das Konzept</mat-list-item>
-        <mat-divider></mat-divider>
-        <p class="text-padding text-devider">Wir versuchen Kurse per Videokonferenz anzubieten. Dabei sind die Kursinhalte auf absolute Neulingen abgestimmmt.
-          Wir wollen ganz gezielt Personen einen Einstieg in die Welt der Technologie bieten, die damit bisher wenig oder nichts
-          zu tun haben. Die Inhalte sind dabei vollkommen kostenlos. Zukünftig soll es die Mäglichkeit für Spenden geben, welche
-          abgesehen von den Selbstkosten an Selbständige in Not weitergeleitet werden sollen. Vorerst steht aber das Erstellen
-          eines Kursangebots im Vordergrund.
-        </p>
-        <mat-list-item>Ich möchte lernen</mat-list-item>
-        <mat-divider></mat-divider>
-        <p class="text-padding text-devider">Wir werden versuchen ab dem 28.03.20 die ersten Software Development Kurse vollkommen kostenlos anzubieten. Alles was du benötigst ist ein Computer.
-          Melde dich einfach unter mitmachen an und erhalten alle weiteren Informationen per Mail.
-        </p>
-        <mat-list-item>Ich möchte unterrichten</mat-list-item>
-        <mat-divider></mat-divider>
-        <p class="text-padding text-devider">
-          Du hast Skills im Bereich Software Development und hast Lust Kurse mitzugestaltent.
-          Dann melde dich einfach unter Mitmachen an und setz einen Haken bei "Ich möchte Unterrichten"
-        </p>
-        <mat-list-item>Ich bin Selbständiger</mat-list-item>
-        <mat-divider></mat-divider>
-        <p class="text-padding text-devider">
-          Wir wollen Selbständigen in Not helfen. Dazu soll der Großteil der Einnahmen weitergeleitet werden.
-          Wenn du Hilfe benötigst, dann melde dich einfach unter <a>Mitmachen</a> an und setz einen Haken bei "Ich bin Selbständiger".
-        </p>
-      </mat-list>
-    </cdk-virtual-scroll-viewport>
+  <mat-card fxLayout="column" fxLayoutAlign="center center" color="primary" class="card-class">
+    <div>
+      <app-title class="app-title-mobile"></app-title>
+      <canvas #canvasMobile>
+      </canvas>
+    </div>
+    <div style="margin: 10px 0 0 0; padding: 0px;">
+      <!-- <mat-label fxLayout="column" fxLayoutAlign="center center"><span class="label">Willkommen in der qSchool</span></mat-label> -->
+      <cdk-virtual-scroll-viewport itemSize="10" class="scrolling-viewport-mobile" style="width: 250px;">
+        <div class="text-format">
+          <p class="text-padding mobile-label">
+            Willkommen in der qSchool
+          </p>
+          <p class="text-padding">
+            Viele von uns befinden sich beruflich grade in einer ungewissen Situation.
+            Der Schock ist groß und die Frage stellt sich wie es zukünftig beruflich weiter gehen soll.
+            Die qSchool möchte helfen den Schock zu überwinden und die Not zur Tugend zu machen. Wir möchten das Projekt wagen, Menschen die zuvor nichts mit IT zutun hatten, die Welt der Bits und Bytes näher zu bringen.
+            Dafür möchte die qSchool kostenlose online Webinare mit Profis aus der IT organisieren. Das Motto ist jeder kann von jedem etwas lernen und gemeinsam schaffen wir den Sprung nach vorne.
+          </p>
+        </div>
+        <mat-list class="text-format">
+          <mat-list-item>Das Konzept</mat-list-item>
+          <mat-divider></mat-divider>
+          <p class="text-padding text-devider">
+            Profis und Erfahrene aus der IT-Branche erstellen Kursinhalte abgestimmt auf absolute Anfänger.
+            Innerhalb wöchentlicher Webinare werden diese Kursinhalte interaktiv durchgearbeitet.
+            Die Lernenden können so alle ihre Frage frei adressieren und grade am Anfang gibt es davon sehr viele.
+            Die Inhalte sollen dabei für Jedermann kostenlos und frei zugänglich gemacht werden, ganz im Sinne des Open Source Gedanken.
+          </p>
+          <mat-list-item>Ich möchte lernen</mat-list-item>
+          <mat-divider></mat-divider>
+          <p class="text-padding text-devider">
+            Wenn du die aktuelle Zeit nutzen möchtest, um neue Fähigkeiten zu erwerben und eventuell eine neue Karriere zu starten, dann zögere nicht und meld dich.
+            Wir garantieren dir, um in der IT erfolgreich zu sein, ist Durchhaltevermögen aber keine akademischer Grad notwendig.
+            Nach der Anmeldung wirst du per Email über Kursangebote und alle weiteren Schritte informiert.
+          </p>
+          <button style="margin-bottom: 10px;" mat-button color="accent" [routerLink]="['/register']" [queryParams]="{type: 'learn'}">Jetzt lernen!</button>
+          <mat-list-item>Ich möchte unterrichten</mat-list-item>
+          <mat-divider></mat-divider>
+          <p class="text-padding text-devider">
+            Aktuell besteht die qSchool aus nur wenigen Lehrern.
+            Das müssen wir ändern! Wenn du Kenntnisse im Bereich der Softwareentwicklung hast, kannst du uns bei vielen Dingen unterstützen.
+            Kurse müssen nicht nur gehalten, sondern auch vor- und nachbereitet werden.
+            Melde dich dazu einfach unter “Ich möchte unterrichten” an.
+          </p>
+          <button style="margin-bottom: 10px;" mat-button color="accent" [routerLink]="['/register']" [queryParams]="{type: 'teach'}">Jetzt mitmachen!</button>
+          <mat-list-item>Ich bin Selbständiger</mat-list-item>
+          <mat-divider></mat-divider>
+          <p class="text-padding text-devider">
+            Auch wenn unsere Angebot kostenlos sein soll uns wir uns als Non Profit verstehen, möchten wir eventuelle Einnahmen aus Spenden oder ähnlichen weiterleiten.
+            Wenn dich die aktuelle Situation in eine Schwierige Situation gebracht hat,
+            dann melde dich unter “Ich bin Selbständiger” und wir versuchen dich zu unterstützen auch wenn wir nichts versprechen können.
+          </p>
+          <button mat-button color="accent" [routerLink]="['/register']" [queryParams]="{type: 'enterprise'}">Jetzt anmelden!</button>
+        </mat-list>
+      </cdk-virtual-scroll-viewport>
+    </div>
   </mat-card>
 </section>
 
-<section fxLayout="row" fxLayoutAlign="center center" class="dotted-background background" fxHide.lt-md="true" fxShow.gt-md="true">
-  <mat-card color="primary" style="margin: 0 5px; min-width: 500px;max-width: 500px">
-    <mat-label fxLayout="column" fxLayoutAlign="center center"><span class="label">Willkommen in der qSchool</span></mat-label>
-    <cdk-virtual-scroll-viewport itemSize="10" class="scrolling-viewport">
-      <mat-list class="text-format">
-        <mat-list-item>Impressum</mat-list-item>
-        <mat-divider></mat-divider>
-        <p class="text-padding text-devider">
-          Jan Klädtke
-          Postanschrift:
-          Dagobertstraße 65
-          50668 Köln
-
-        Kontakt:
-        Telefon:
-        E-Mail: jan.klaedtke@qschool.de
-        </p>
-      </mat-list>
-    </cdk-virtual-scroll-viewport>
+<section fxLayoutAlign="center center" class="dotted-background background" fxHide.lt-md="true" fxShow.gt-md="true">
+  <mat-card xLayout="row" fxLayoutAlign="center center" color="primary" style="margin: 0 5px; min-width: 500px;max-width: 725px">
+   <app-title class="app-title"></app-title>
+    <canvas #canvas>
+    </canvas>
+    <div style="margin: 0px; padding: 0px;">
+      <mat-label fxLayout="column" fxLayoutAlign="center center"><span class="label">Willkommen in der qSchool</span></mat-label>
+      <cdk-virtual-scroll-viewport itemSize="10" class="scrolling-viewport" style="width: 500px;">
+        <div class="text-format">
+          <p class="text-padding">
+            Viele von uns befinden sich beruflich grade in einer ungewissen Situation.
+            Der Schock ist groß und die Frage stellt sich wie es zukünftig beruflich weiter gehen soll.
+            Die qSchool möchte helfen den Schock zu überwinden und die Not zur Tugend zu machen. Wir möchten das Projekt wagen, Menschen die zuvor nichts mit IT zutun hatten, die Welt der Bits und Bytes näher zu bringen.
+            Dafür möchte die qSchool kostenlose online Webinare mit Profis aus der IT organisieren. Das Motto ist jeder kann von jedem etwas lernen und gemeinsam schaffen wir den Sprung nach vorne.
+          </p>
+        </div>
+        <mat-list class="text-format">
+          <mat-list-item>Das Konzept</mat-list-item>
+          <mat-divider></mat-divider>
+          <p class="text-padding text-devider">
+            Profis und Erfahrene aus der IT-Branche erstellen Kursinhalte abgestimmt auf absolute Anfänger.
+            Innerhalb wöchentlicher Webinare werden diese Kursinhalte interaktiv durchgearbeitet.
+            Die Lernenden können so alle ihre Frage frei adressieren und grade am Anfang gibt es davon sehr viele.
+            Die Inhalte sollen dabei für Jedermann kostenlos und frei zugänglich gemacht werden, ganz im Sinne des Open Source Gedanken.
+          </p>
+          <mat-list-item>Ich möchte lernen</mat-list-item>
+          <mat-divider></mat-divider>
+          <p class="text-padding text-devider">
+            Wenn du die aktuelle Zeit nutzen möchtest, um neue Fähigkeiten zu erwerben und eventuell eine neue Karriere zu starten, dann zögere nicht und meld dich.
+            Wir garantieren dir, um in der IT erfolgreich zu sein, ist Durchhaltevermögen aber keine akademischer Grad notwendig.
+            Nach der Anmeldung wirst du per Email über Kursangebote und alle weiteren Schritte informiert.
+          </p>
+          <button style="margin-bottom: 10px;" mat-button color="accent" [routerLink]="['/register']" [queryParams]="{type: 'learn'}">Jetzt lernen!</button>
+          <mat-list-item>Ich möchte unterrichten</mat-list-item>
+          <mat-divider></mat-divider>
+          <p class="text-padding text-devider">
+            Aktuell besteht die qSchool aus nur wenigen Lehrern.
+            Das müssen wir ändern! Wenn du Kenntnisse im Bereich der Softwareentwicklung hast, kannst du uns bei vielen Dingen unterstützen.
+            Kurse müssen nicht nur gehalten, sondern auch vor- und nachbereitet werden.
+            Melde dich dazu einfach unter “Ich möchte unterrichten” an.
+          </p>
+          <button style="margin-bottom: 10px;" mat-button color="accent" [routerLink]="['/register']" [queryParams]="{type: 'teach'}">Jetzt mitmachen!</button>
+          <mat-list-item>Ich bin Selbständiger</mat-list-item>
+          <mat-divider></mat-divider>
+          <p class="text-padding text-devider">
+            Auch wenn unsere Angebot kostenlos sein soll uns wir uns als Non Profit verstehen, möchten wir eventuelle Einnahmen aus Spenden oder ähnlichen weiterleiten.
+            Wenn dich die aktuelle Situation in eine Schwierige Situation gebracht hat,
+            dann melde dich unter “Ich bin Selbständiger” und wir versuchen dich zu unterstützen auch wenn wir nichts versprechen können.
+          </p>
+          <button mat-button color="accent" [routerLink]="['/register']" [queryParams]="{type: 'enterprise'}">Jetzt anmelden!</button>
+        </mat-list>
+      </cdk-virtual-scroll-viewport>
+    </div>
   </mat-card>
 </section>
 

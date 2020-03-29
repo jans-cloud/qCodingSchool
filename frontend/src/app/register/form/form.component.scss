@@ -44,6 +44,9 @@ mat-error {
 .datenschutz {
   font-size: 0.8em;
   padding-left: 7px;
+  a {
+    text-decoration: none;
+  }
 }
 
 .dsgvo-checkbox {
@@ -108,7 +111,7 @@ mat-error {
 }
 
 .scrolling-viewport {
-  height: 45vh;
+  height: 40vh;
 }
 
 .pointer-icon {

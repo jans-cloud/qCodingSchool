@@ -15,27 +15,13 @@ export class SubjectsComponent implements OnInit, DoCheck {
   constructor(private router: Router) { }
 
   ngDoCheck(): void {
-    switch(this.router.url) {
-      case '/':
-        this.home = true;
-        this.register = false;
-        break;
-      case '/home':
-        this.home = true;
-        this.register = false;
-        break;
-      case '/register':
-        this.home = false;
-        this.register = true;
-        break;
-      case '/register/form':
-        this.home = false;
-        this.register = true;
-        break;
-      default:
-        this.home = false;
-        this.register = false;
-        break;
+    if (this.router.url.includes('/')) {
+      this.home = true;
+      this.register = false;
+    }
+    if (this.router.url.includes('/register')) {
+      this.home = false;
+      this.register = true;
     }
   }
 
@@ -43,11 +29,6 @@ export class SubjectsComponent implements OnInit, DoCheck {
   }
 
   setButtonActive() {
-  //  console.log('Snap', this.route.snapshot);
-  //  this.route.url.subscribe((data) => {
-  //   console.log("Data", data);
-  //  });
-  //  console.log(this.route.children);
   }
 
 }

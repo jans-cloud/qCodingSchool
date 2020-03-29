@@ -3,6 +3,7 @@ import { trigger, style, animate, transition } from '@angular/animations';
 import { FormGroup, Validators, FormControl, FormArray} from '@angular/forms';
 import { Observable } from 'rxjs';
 import { NgxSpinnerService } from "ngx-spinner";
+import { ActivatedRoute } from '@angular/router';
 
 import { ApiService } from '../services/api.service';
 
@@ -37,7 +38,7 @@ export class FormComponent implements OnInit {
   customerEmail: string;
   registerForm: FormGroup;
 
-  constructor(private api: ApiService, private spinner: NgxSpinnerService) { }
+  constructor(private api: ApiService, private spinner: NgxSpinnerService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.registerForm = new FormGroup({
@@ -48,6 +49,25 @@ export class FormComponent implements OnInit {
       'name': new FormControl(null, [Validators.required, Validators.maxLength(30)]),
       'dsgvo': new FormControl(null,  [Validators.requiredTrue]),
     });
+    const type = this.route.snapshot.queryParams['type'];
+    console.log(type);
+    if (type === 'learn') {
+      this.registerForm.get('learner').setValue(true);
+      this.registerForm.get('teacher').setValue(false);
+      this.registerForm.get('enterprise').setValue(false);
+    }
+    if (type === 'teach') {
+      this.registerForm.get('learner').setValue(false);
+      this.registerForm.get('teacher').setValue(true);
+      this.registerForm.get('enterprise').setValue(false);
+      this.setupForm();
+    }
+    if (type === 'enterprise') {
+      this.registerForm.get('learner').setValue(false);
+      this.registerForm.get('teacher').setValue(false);
+      this.registerForm.get('enterprise').setValue(true);
+      this.setupForm();
+    }
   }
 
   getSkillErrors(): {maxlength: boolean, required: boolean} {

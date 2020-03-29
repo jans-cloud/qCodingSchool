@@ -10,33 +10,37 @@ export class BurgermenuComponent implements OnInit, DoCheck {
 
   home: boolean;
   register: boolean;
+  impressum: boolean;
+  dsgvo: boolean;
   constructor(private router: Router) { }
 
   ngOnInit(): void {
   }
 
   ngDoCheck(): void {
-    switch(this.router.url) {
-      case '/':
-        this.home = false;
-        this.register = true;
-        break;
-      case '/home':
-        this.home = false;
-        this.register = true;
-        break;
-      case '/register':
-        this.home = true;
-        this.register = false;
-        break;
-      case '/register/form':
-          this.home = true;
-          this.register = false;
-          break;
-      default:
-        this.home = true;
-        this.register = true;
-        break;
+    if (this.router.url.includes('/')) {
+      this.home = false;
+      this.register = true;
+      this.impressum = true;
+      this.dsgvo = true;
+    }
+    if (this.router.url.includes('/register')) {
+      this.home = true;
+      this.register = false;
+      this.impressum = true;
+      this.dsgvo = true;
+    }
+    if (this.router.url.includes('/impressum')) {
+      this.home = true;
+      this.register = true;
+      this.impressum = false;
+      this.dsgvo = true;
+    }
+    if (this.router.url.includes('/dsgvo')) {
+      this.home = true;
+      this.register = true;
+      this.impressum = true;
+      this.dsgvo = false;
     }
   }
 

@@ -2,4 +2,6 @@
 <mat-menu #menu="matMenu">
   <button mat-menu-item [routerLink]="['/landing']" *ngIf="home">Home</button>
   <button mat-menu-item [routerLink]="['/register']" *ngIf="register">Registrieren</button>
+  <button mat-menu-item [routerLink]="['/impressum']" *ngIf="impressum">Impressum</button>
+  <button mat-menu-item [routerLink]="['/dsgvo']" *ngIf="dsgvo">Dsgvo</button>
 </mat-menu>

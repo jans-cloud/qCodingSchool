@@ -17,11 +17,6 @@
             <mat-error *ngIf="getIndustryErrors().maxlength">Ihr Branche darf maximal 30 Zeichen enthalten.</mat-error>
           </div>
         </div>
-        <!-- <mat-radio-group formControlName="acctype" style="width: 200px; margin-bottom: 5px;" fxLayout="column" fxLayoutGap="7px" (change)="setupForm()">
-          <mat-radio-button value="learner">Ich möchte Lernen</mat-radio-button>
-          <mat-radio-button value="teacher">Ich möchte Unterrichten</mat-radio-button>
-          <mat-radio-button value="enterprise">Ich bin Selbständiger</mat-radio-button>
-        </mat-radio-group> -->
         <div fxLayout="column" fxLayoutGap="7px" style="width: 200px; margin-bottom: 5px;">
           <mat-checkbox formControlName="learner" (change)="setupForm()">Ich möchte Lernen</mat-checkbox>
           <mat-checkbox formControlName="teacher" (change)="setupForm()">Ich möchte Unterrichten</mat-checkbox>
@@ -49,7 +44,7 @@
         </mat-form-field>
         <div class="dsgvo-checkbox" fxLayout fxLayoutAlign="start center">
           <mat-checkbox formControlName="dsgvo"></mat-checkbox>
-          <span class="datenschutz"><a>Datenschutzbedingungen</a> zustimmen</span>
+          <span class="datenschutz"><a [routerLink]="['/dsgvo']">Datenschutzbedingungen</a> zustimmen</span>
         </div>
         <div class="form-button-register" fxLayout fxLayoutAlign="center center" style="width: 200px;">
           <button mat-flat-button color="accent" type="submit" [disabled]="!(registerForm.status==='VALID')">Anmelden</button>
