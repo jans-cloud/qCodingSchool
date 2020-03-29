@@ -10,6 +10,7 @@ export class ThemingService {
 
   animationColorDark: string = "rgba(66, 66, 66, 0.1)";
   animationColorLight: string = "rgba(255, 255, 255, 0.1)";
+  animationColorLightBack: string = "rgba(224, 224, 224, 0.1)";
 
 
   changeTheme() {
@@ -44,6 +45,14 @@ export class ThemingService {
       return this.animationColorDark;
     }
     return this.animationColorLight;
+  }
+
+  get currentAnimationColorBack(): string {
+    const theme = localStorage.getItem(this.localStrName);
+    if (theme === "dark-theme") {
+      return this.animationColorDark;
+    }
+    return this.animationColorLightBack;
   }
 
 }

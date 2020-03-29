@@ -205,10 +205,14 @@ $dark-theme: mat-dark-theme(
   }
 
   .dotted-background {
-    background-image: radial-gradient(mat-contrast($primary, 500) 4%, mat-color($primary, 500) 3%);
-    background-position: 0 0;
-    background-size: 25px 25px;
+    // background-image: radial-gradient(mat-contrast($primary, 500) 4%, mat-color($primary, 500) 3%);
+    // background-position: 0 0;
+    // background-size: 25px 25px;
+    // background-color: gray;
+  }
 
+  .background-color {
+    background-color: mat-color($primary, 500);
   }
 
   .mat-form-field-label{
