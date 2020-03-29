@@ -23,6 +23,14 @@ export class SubjectsComponent implements OnInit, DoCheck {
       this.home = false;
       this.register = true;
     }
+    if (this.router.url.includes('/impressum')) {
+      this.home = false;
+      this.register = false;
+    }
+    if (this.router.url.includes('/dsgvo')) {
+      this.home = false;
+      this.register = false;
+    }
   }
 
   ngOnInit(): void {
