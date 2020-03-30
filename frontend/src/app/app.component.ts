@@ -33,13 +33,13 @@ export class AppComponent {
   @HostListener('window:resize', ['$event'])
   onResize(event?) {
     clearInterval(this.intervall);
-    const screenHeight = window.innerHeight;
+    const screenHeight = window.innerHeight * 0.98;
     const screenWidth = window.innerWidth;
     this.canvas.nativeElement.width = screenWidth;
     this.canvas.nativeElement.height = screenHeight;
     this.ctx = this.canvas.nativeElement.getContext('2d');
-
-    this.columns = this.canvas.nativeElement.width / this.fontSize;
+    this.columns = this.canvas.nativeElement.height / this.fontSize;
+    console.log(this.columns);
     this.drops = [];
     for (let i = 0; i < this.columns; i++) {
       this.drops[i] = 1;
