@@ -5,8 +5,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
-
+import { FooterModule } from './shared/footer/footer.module'
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { NavModule } from './shared/nav/nav.module';
 
 import { MaterialModules } from './material-modules';
 
@@ -21,6 +22,8 @@ import { MaterialModules } from './material-modules';
     FlexLayoutModule,
     MaterialModules,
     HttpClientModule,
+    FooterModule,
+    NavModule,
   ],
   exports: [
     MaterialModules,

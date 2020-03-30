@@ -3,5 +3,7 @@
 <canvas #canvas>
 </canvas>
 <section id="uniquesection" fxFlex fxLayout="column" [ngClass]="getTheme()" #sectionContainer>
+  <app-nav></app-nav>
   <router-outlet></router-outlet>
+  <app-footer></app-footer>
 </section>

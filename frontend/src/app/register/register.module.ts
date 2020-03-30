@@ -13,9 +13,6 @@ import { MaterialModules } from '../material-modules';
 import { ConfirmComponent } from './confirm/confirm.component';
 import { FormComponent } from './form/form.component';
 
-import { NavModule } from '../shared/nav/nav.module';
-import { FooterModule } from '../shared/footer/footer.module'
-
 @NgModule({
   declarations: [
     RegisterComponent,
@@ -30,8 +27,6 @@ import { FooterModule } from '../shared/footer/footer.module'
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    NavModule,
-    FooterModule,
     NgxSpinnerModule
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
