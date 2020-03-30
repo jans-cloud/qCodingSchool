@@ -8,7 +8,7 @@ import getLogger from '../../utils/logger/logger';
 const logger = getLogger('registrationService');
 
 const registrationMailOption = {
-  from: 'info@qschool.de',
+  from: 'noreply@qschool.de',
   to: '',
   subject: 'qSchool Anmeldung',
   html: '',
