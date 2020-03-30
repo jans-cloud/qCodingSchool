@@ -40,7 +40,6 @@ export class AppComponent {
     this.canvas.nativeElement.height = screenHeight;
     this.ctx = this.canvas.nativeElement.getContext('2d');
     this.columns = this.canvas.nativeElement.height / this.fontSize;
-    console.log(this.columns);
     this.drops = [];
     for (let i = 0; i < this.columns; i++) {
       this.drops[i] = 1;

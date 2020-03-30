@@ -1,14 +1,11 @@
 <app-nav></app-nav>
-<section fxLayout="row" fxLayoutAlign="center center" class="dotted-background background" fxShow.sm="true" fxShow.lt-sm="true" fxHide.md="true" fxHide.gt-md="true">
+<section fxLayout="row" fxLayoutAlign="center center" class="dotted-background background" fxShow.xs="true" fxShow.lt-sm="true" fxHide.sm="true" fxHide.gt-xs="true">
   <mat-card fxLayout="column" fxLayoutAlign="center center" color="primary" class="card-class">
     <div>
       <app-title class="app-title-mobile"></app-title>
-      <canvas #canvasMobile>
-      </canvas>
     </div>
     <div style="margin: 10px 0 0 0; padding: 0px;">
-      <!-- <mat-label fxLayout="column" fxLayoutAlign="center center"><span class="label">Willkommen in der qSchool</span></mat-label> -->
-      <cdk-virtual-scroll-viewport itemSize="10" class="scrolling-viewport-mobile" style="width: 250px;">
+      <cdk-virtual-scroll-viewport itemSize="10" class="scrolling-viewport-mobile" style="width: 300px;">
         <div class="text-format" fxLayout="row" fxLayoutAlign="center center">
           <p class="text-padding mobile-label">
             Impressum
@@ -28,14 +25,11 @@
   </mat-card>
 </section>
 
-<section fxLayoutAlign="center center" class="dotted-background background" fxHide.lt-md="true" fxShow.gt-md="true">
-  <mat-card fxLayout="row" fxLayoutAlign="center center" color="primary" style="margin: 0 5px; min-width: 500px;max-width: 725px">
-   <app-title class="app-title"></app-title>
-    <canvas #canvas>
-    </canvas>
+<section fxLayoutAlign="center center" class="dotted-background background" fxHide.lt-sm="true" fxShow.gt-xs="true">
+  <mat-card fxLayout="row" fxLayoutAlign="center center" color="primary" style="margin: 0 5px;">
     <div style="margin: 0px; padding: 0px;">
       <mat-label fxLayout="column" fxLayoutAlign="center center"><span class="label">Impressum</span></mat-label>
-      <cdk-virtual-scroll-viewport itemSize="10" class="scrolling-viewport" style="width: 500px;">
+      <cdk-virtual-scroll-viewport itemSize="10" class="scrolling-viewport" style="width: 600px;">
         <div fxLayout="row" fxLayoutAlign="center center">
           <ul>
             <li>Jan Klädtke</li>
