@@ -30,11 +30,12 @@ export class AppComponent {
 
   intervall: any;
   @ViewChild("canvas", {static: true}) canvas: ElementRef;
+  @ViewChild("sectionContainer", {static: true}) sectionContainer: ElementRef;
   @HostListener('window:resize', ['$event'])
   onResize(event?) {
     clearInterval(this.intervall);
-    const screenHeight = window.innerHeight * 0.98;
-    const screenWidth = window.innerWidth;
+    const screenHeight = this.sectionContainer.nativeElement.offsetHeight * 0.98;
+    const screenWidth = this.sectionContainer.nativeElement.offsetWidth;
     this.canvas.nativeElement.width = screenWidth;
     this.canvas.nativeElement.height = screenHeight;
     this.ctx = this.canvas.nativeElement.getContext('2d');
