@@ -8,7 +8,6 @@ import { LandingComponent } from './landing.component';
 import { MaterialModules } from '../material-modules';
 
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { TitleComponent } from './title/title.component';
 import { LandingDesktopComponent } from './landing-desktop/landing-desktop.component';
 import { LandingMobileComponent } from './landing-mobile/landing-mobile.component';
 
@@ -18,7 +17,6 @@ import { FooterModule } from '../shared/footer/footer.module';
 @NgModule({
   declarations: [
     LandingComponent,
-    TitleComponent,
     LandingDesktopComponent,
     LandingMobileComponent,
   ],
