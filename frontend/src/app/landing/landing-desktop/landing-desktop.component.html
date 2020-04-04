@@ -6,7 +6,7 @@
       <mat-card [@openClose]="cardOne ? 'open' : 'closed'" class="card grow" fxLayout="column"
         fxLayoutAlign="center center" (click)="changeFormOne()">
         <mat-card-header>
-          <mat-card-title>Das Konzept</mat-card-title>
+          <mat-card-title [ngClass]="getCardColor()">Das Konzept</mat-card-title>
         </mat-card-header>
         <mat-card-content style="height: 75%;">
           <img src="../../assets/img/intro.png" alt="">
@@ -16,7 +16,7 @@
       <mat-card *ngIf="!cardOne" [@formInsertRemoveTrigger]="state" class="card" fxLayout="column"
         fxLayoutAlign="center center" style="position: absolute; top: 0;left: 0;">
         <mat-card-header>
-          <mat-card-title>Das Konzept</mat-card-title>
+          <mat-card-title [ngClass]="getCardColor()">Das Konzept</mat-card-title>
         </mat-card-header>
         <mat-card-content style="height: 75%;">
           <cdk-virtual-scroll-viewport itemSize="10" class="scrolling-viewport-intro">
@@ -46,7 +46,7 @@
       <mat-card [@openClose]="cardTwo ? 'open' : 'closed'" class="card grow" fxLayout="column"
         fxLayoutAlign="center center" (click)="changeFormTwo()">
         <mat-card-header>
-          <mat-card-title>Lernen</mat-card-title>
+          <mat-card-title [ngClass]="getCardColor()">Lernen</mat-card-title>
         </mat-card-header>
         <mat-card-content style="height: 75%;">
           <img src="../../assets/img/learning.png" alt="">
@@ -55,7 +55,7 @@
       <mat-card *ngIf="!cardTwo" [@formInsertRemoveTrigger]="state" class="card" fxLayout="column"
         fxLayoutAlign="center center" style="position: absolute; top: 0;left: 0;">
         <mat-card-header>
-          <mat-card-title>Lernen</mat-card-title>
+          <mat-card-title [ngClass]="getCardColor()">Lernen</mat-card-title>
         </mat-card-header>
         <mat-card-content style="height: 75%;">
           <cdk-virtual-scroll-viewport itemSize="10" class="scrolling-viewport">
@@ -69,7 +69,7 @@
             </p>
           </cdk-virtual-scroll-viewport>
           <button mat-button color="accent" [routerLink]="['/register']"
-            [queryParams]="{type: 'enterprise'}"><span>Jetzt anmelden!</span></button>
+            [queryParams]="{type: 'learn'}"><span>Jetzt anmelden!</span></button>
         </mat-card-content>
       </mat-card>
     </div>
@@ -81,7 +81,7 @@
       <mat-card [@openClose]="cardThree ? 'open' : 'closed'" class="card grow" fxLayout="column"
         fxLayoutAlign="center center" (click)="changeFormThree()">
         <mat-card-header>
-          <mat-card-title>Unterrichten</mat-card-title>
+          <mat-card-title [ngClass]="getCardColor()">Unterrichten</mat-card-title>
         </mat-card-header>
         <mat-card-content style="height: 75%;">
           <img src="../../assets/img/teaching.png" alt="">
@@ -90,7 +90,7 @@
       <mat-card *ngIf="!cardThree" [@formInsertRemoveTrigger]="state" class="card" fxLayout="column"
         fxLayoutAlign="center center" style="position: absolute; top: 0;left: 0;">
         <mat-card-header>
-          <mat-card-title>Unterrichten</mat-card-title>
+          <mat-card-title [ngClass]="getCardColor()">Unterrichten</mat-card-title>
         </mat-card-header>
         <mat-card-content style="height: 75%;">
           <cdk-virtual-scroll-viewport itemSize="10" class="scrolling-viewport">
@@ -111,7 +111,7 @@
       <mat-card [@openClose]="cardFour ? 'open' : 'closed'" class="card grow" fxLayout="column"
         fxLayoutAlign="center center" (click)="changeFormFour()">
         <mat-card-header>
-          <mat-card-title>Selbständige</mat-card-title>
+          <mat-card-title [ngClass]="getCardColor()">Selbständige</mat-card-title>
         </mat-card-header>
         <mat-card-content style="height: 75%;">
           <img src="../../assets/img/enterprise.png" alt="">
@@ -120,7 +120,7 @@
       <mat-card *ngIf="!cardFour" [@formInsertRemoveTrigger]="state" class="card" fxLayout="column"
         fxLayoutAlign="center center" style="position: absolute; top: 0;left: 0;">
         <mat-card-header>
-          <mat-card-title>Selbständige</mat-card-title>
+          <mat-card-title [ngClass]="getCardColor()">Selbständige</mat-card-title>
         </mat-card-header>
         <mat-card-content style="height: 75%;">
           <cdk-virtual-scroll-viewport itemSize="10" class="scrolling-viewport">

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { trigger, transition, style, animate, state } from '@angular/animations';
+import { ThemingService } from '../../shared/services/theming.service';
 
 @Component({
   selector: 'app-landing-desktop',
@@ -36,9 +37,17 @@ export class LandingDesktopComponent implements OnInit {
   state = "enter";
 
 
-  constructor() {}
+  constructor(private theme: ThemingService) {}
 
   ngOnInit(): void {
+  }
+
+  getCardColor() {
+    const theme = this.theme.themeValue;
+    if (theme === "dark-theme") {
+      return "dark-color ";
+    }
+    return "";
   }
 
   changeFormOne() {
