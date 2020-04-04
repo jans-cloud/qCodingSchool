@@ -7,20 +7,7 @@ app-nav {
 }
 
 app-footer {
-  // position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
   z-index: 2;
+  margin: 0;
+  padding: 0;
 }
-
-#uniquesection {
-  position: absolute;
-  width: 100vw;
-  height: 100vh;
-}
-
-// canvas {
-//   width: 100vw !important;
-//   height: 100vh !important;
-// }

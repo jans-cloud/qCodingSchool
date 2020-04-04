@@ -23,12 +23,14 @@ button {
 
 span {
   text-align: center;
+  font-family: 'Fira Mono', monospace;
 }
 
 mat-card {
   width: 275px;
   margin: 0 10px 0 10px;
   max-height: 65vh;
+  font-family: 'Fira Mono', monospace;
 }
 
 .hide-pwicon {

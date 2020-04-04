@@ -10,6 +10,9 @@ import { MaterialModules } from '../material-modules';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { TitleComponent } from './title/title.component';
 
+import { FooterModule } from '../shared/footer/footer.module';
+import { BackgroundModule } from '../shared/background/background.module';
+
 @NgModule({
   declarations: [ImpressumComponent, TitleComponent],
   imports: [
@@ -17,6 +20,8 @@ import { TitleComponent } from './title/title.component';
     ImpressumRoutingModule,
     MaterialModules,
     FlexLayoutModule,
+    BackgroundModule,
+    FooterModule
   ]
 })
 export class ImpressumModule { }

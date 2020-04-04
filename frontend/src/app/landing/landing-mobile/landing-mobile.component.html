@@ -1,0 +1,119 @@
+<section fxLayout="column" fxLayoutAlign="start center" class="background" fxLayoutGap="4%">
+  <div style="position: relative;">
+    <mat-card [@openClose]="cardOne ? 'open' : 'closed'" class="card" fxLayout="column" fxLayoutAlign="center center" (click)="changeFormOne()">
+      <mat-card-header>
+        <mat-card-title>Das Konzept</mat-card-title>
+      </mat-card-header>
+      <mat-card-content style="height: 75%;">
+        <img src="../../assets/img/intro.png" alt="">
+      </mat-card-content>
+    </mat-card>
+
+    <mat-card *ngIf="!cardOne" [@formInsertRemoveTrigger]="state" class="card" fxLayout="column" fxLayoutAlign="center center" style="position: absolute; top: 0;left: 0;">
+      <mat-card-header>
+        <mat-card-title>Das Konzept</mat-card-title>
+      </mat-card-header>
+      <mat-card-content style="height: 75%;">
+        <cdk-virtual-scroll-viewport itemSize="10" class="scrolling-viewport-intro">
+            <p class="text-block">
+              Viele von uns befinden sich beruflich momentan in einer ungewissen Situation.
+              Der Schock ist groß und es stellt sich die Frage, wie es zukünftig beruflich weitergehen soll.
+              Die qSchool möchte helfen, den Schock zu überwinden und dabei aus der Not eine Tugend machen.
+              Wir möchten das Projekt wagen, Menschen die zuvor nichts mit IT zutun hatten, die Welt der Bits und Bytes näher zu bringen.
+              Um dies zu erreichen, organisiert die qSchool kostenlose Webinare mit Profis aus der IT-Branche.
+              Gemäß dem Motto “Jeder kann von jedem etwas lernen”. Gemeinsam schaffen wir den Sprung nach vorne!
+            </p>
+            <p class="text-block">
+              Profis und Erfahrene aus der IT-Branche erstellen Kursinhalte abgestimmt auf absolute Anfänger.
+              Innerhalb wöchentlicher Webinare arbeiten diese die Kursinhalte interaktiv durch.
+              So können die Lernenden alle ihre Fragen frei adressieren.
+              Und besonders am Anfang gibt es sicherlich viele davon.
+              Die Inhalte sollen dabei für Jeden kostenlos und frei zugänglich sein.
+              Ganz im Sinne des Open Source Gedanken.
+            </p>
+        </cdk-virtual-scroll-viewport>
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+  <div style="position: relative;">
+    <mat-card [@openClose]="cardTwo ? 'open' : 'closed'" class="card" fxLayout="column" fxLayoutAlign="center center" (click)="changeFormTwo()">
+      <mat-card-header>
+        <mat-card-title>Lernen</mat-card-title>
+      </mat-card-header>
+      <mat-card-content style="height: 75%;">
+        <img src="../../assets/img/learning.png" alt="">
+      </mat-card-content>
+    </mat-card>
+    <mat-card *ngIf="!cardTwo" [@formInsertRemoveTrigger]="state" class="card" fxLayout="column" fxLayoutAlign="center center" style="position: absolute; top: 0;left: 0;">
+      <mat-card-header>
+        <mat-card-title>Lernen</mat-card-title>
+      </mat-card-header>
+      <mat-card-content style="height: 75%;">
+        <cdk-virtual-scroll-viewport itemSize="10" class="scrolling-viewport">
+          <p class="text-block">
+            Wenn Du die aktuelle Zeit nutzen möchtest, um neue Fähigkeiten zu erwerben und eventuell eine neue Karriere zu starten,
+            dann zögere nicht und melde Dich. Wir garantieren Dir, um in der IT erfolgreich zu sein, ist Durchhaltevermögen aber kein
+            akademischer Grad notwendig. Nach der Anmeldung wirst Du per Email über Kursangebote und alle weiteren Schritte informiert.
+          </p>
+        </cdk-virtual-scroll-viewport>
+        <button mat-button  color="accent" [routerLink]="['/register']" [queryParams]="{type: 'enterprise'}"><span>Jetzt anmelden!</span></button>
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+  <div style="position: relative;">
+    <mat-card [@openClose]="cardThree ? 'open' : 'closed'" class="card" fxLayout="column" fxLayoutAlign="center center" (click)="changeFormThree()">
+      <mat-card-header>
+        <mat-card-title>Unterrichten</mat-card-title>
+      </mat-card-header>
+      <mat-card-content style="height: 75%;">
+        <img src="../../assets/img/teaching.png" alt="">
+      </mat-card-content>
+    </mat-card>
+    <mat-card *ngIf="!cardThree" [@formInsertRemoveTrigger]="state" class="card" fxLayout="column" fxLayoutAlign="center center" style="position: absolute; top: 0;left: 0;">
+      <mat-card-header>
+        <mat-card-title>Unterrichten</mat-card-title>
+      </mat-card-header>
+      <mat-card-content style="height: 75%;">
+        <cdk-virtual-scroll-viewport itemSize="10" class="scrolling-viewport">
+          <p class="text-block">
+            Aktuell besteht die qSchool nur aus wenigen Lehrern.
+            Das wollen wir ändern! Wenn Du Kenntnisse im Bereich der Softwareentwicklung hast,
+            kannst Du uns bei vielen Dingen unterstützen. Kurse müssen nicht nur gehalten,
+            sondern auch vor- und nachbereitet werden. Melde Dich dazu einfach unter “Ich möchte unterrichten” an.
+          </p>
+        </cdk-virtual-scroll-viewport>
+        <button style="margin-bottom: 10px;" mat-button color="accent" [routerLink]="['/register']" [queryParams]="{type: 'teach'}"><span>Jetzt mitmachen!</span></button>
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+  <div style="position: relative;">
+    <mat-card [@openClose]="cardFour ? 'open' : 'closed'" class="card" fxLayout="column" fxLayoutAlign="center center" (click)="changeFormFour()">
+      <mat-card-header>
+        <mat-card-title>Selbständige</mat-card-title>
+      </mat-card-header>
+      <mat-card-content style="height: 75%;">
+        <img src="../../assets/img/enterprise.png" alt="">
+      </mat-card-content>
+    </mat-card>
+    <mat-card *ngIf="!cardFour" [@formInsertRemoveTrigger]="state" class="card" fxLayout="column" fxLayoutAlign="center center" style="position: absolute; top: 0;left: 0;">
+      <mat-card-header>
+        <mat-card-title>Selbständige</mat-card-title>
+      </mat-card-header>
+      <mat-card-content style="height: 75%;">
+        <cdk-virtual-scroll-viewport itemSize="10" class="scrolling-viewport">
+          <p class="text-block">
+            Auch wenn unser Angebot kostenlos sein soll und wir uns als Non Profit Organisation verstehen,
+            möchten wir eventuelle Einnahmen aus Spenden oder Ähnlichem weiterleiten.
+            Wenn Dich die aktuelle Situation in eine schwierige Lage gebracht hat,
+            dann melde Dich unter “Ich bin Selbständiger” an und wir versuchen Dich zu unterstützen.
+          </p>
+        </cdk-virtual-scroll-viewport>
+        <button mat-button color="accent" [routerLink]="['/register']" [queryParams]="{type: 'enterprise'}"><span>Jetzt anmelden!</span></button>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</section>
+

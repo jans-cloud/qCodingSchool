@@ -1,45 +1,49 @@
 
-<section fxLayout="row" fxLayoutAlign="center center" class="dotted-background background" fxShow.xs="true" fxShow.lt-sm="true" fxHide.sm="true" fxHide.gt-xs="true">
-  <mat-card fxLayout="column" fxLayoutAlign="center center" color="primary" class="card-class">
-    <div>
-      <app-title class="app-title-mobile"></app-title>
-    </div>
-    <div style="margin: 10px 0 0 0; padding: 0px;">
-      <cdk-virtual-scroll-viewport itemSize="10" class="scrolling-viewport-mobile" style="width: 285px;">
-        <div class="text-format" fxLayout="row" fxLayoutAlign="center center">
-          <p class="text-padding mobile-label">
-            Impressum
-          </p>
-        </div>
-        <div fxLayout="row" fxLayoutAlign="center center">
-          <ul>
-            <li>Jan Klädtke</li>
-            <li>Postanschrift:</li>
-            <li>Dagobertstraße 65</li>
-            <li>50668 Köln</li>
-            <li>E-Mail: jan.klaedtke@qschool.de</li>
-          </ul>
-        </div>
-      </cdk-virtual-scroll-viewport>
-    </div>
-  </mat-card>
-</section>
+<app-background>
+  <section fxLayout="row" fxLayoutAlign="center center" class="dotted-background background" fxShow.xs="true" fxShow.lt-sm="true" fxHide.sm="true" fxHide.gt-xs="true">
+    <mat-card fxLayout="column" fxLayoutAlign="center center" color="primary" class="card-class">
+      <div>
+        <app-title class="app-title-mobile"></app-title>
+      </div>
+      <div style="margin: 10px 0 0 0; padding: 0px;">
+        <cdk-virtual-scroll-viewport itemSize="10" class="scrolling-viewport-mobile" style="width: 285px;">
+          <div class="text-format" fxLayout="row" fxLayoutAlign="center center">
+            <p class="text-padding mobile-label">
+              Impressum
+            </p>
+          </div>
+          <div fxLayout="row" fxLayoutAlign="center center">
+            <ul>
+              <li>Jan Klädtke</li>
+              <li>Postanschrift:</li>
+              <li>Dagobertstraße 65</li>
+              <li>50668 Köln</li>
+              <li>E-Mail: jan.klaedtke@qschool.de</li>
+            </ul>
+          </div>
+        </cdk-virtual-scroll-viewport>
+      </div>
+    </mat-card>
+  </section>
 
-<section fxLayoutAlign="center center" class="dotted-background background" fxHide.lt-sm="true" fxShow.gt-xs="true">
-  <mat-card fxLayout="row" fxLayoutAlign="center center" color="primary" style="margin: 0 5px;">
-    <div style="margin: 0px; padding: 0px;">
-      <mat-label fxLayout="column" fxLayoutAlign="center center"><span class="label">Impressum</span></mat-label>
-      <cdk-virtual-scroll-viewport itemSize="10" class="scrolling-viewport" style="width: 600px;">
-        <div fxLayout="row" fxLayoutAlign="center center">
-          <ul>
-            <li>Jan Klädtke</li>
-            <li>Postanschrift:</li>
-            <li>Dagobertstraße 65</li>
-            <li>50668 Köln</li>
-            <li>E-Mail: jan.klaedtke@qschool.de</li>
-          </ul>
-        </div>
-      </cdk-virtual-scroll-viewport>
-    </div>
-  </mat-card>
-</section>
+  <section fxLayoutAlign="center center" class="dotted-background background" fxHide.lt-sm="true" fxShow.gt-xs="true">
+    <mat-card fxLayout="row" fxLayoutAlign="center center" color="primary" style="margin: 0 5px;">
+      <div style="margin: 0px; padding: 0px;">
+        <mat-label fxLayout="column" fxLayoutAlign="center center"><span class="label">Impressum</span></mat-label>
+        <cdk-virtual-scroll-viewport itemSize="10" class="scrolling-viewport" style="width: 600px;">
+          <div fxLayout="row" fxLayoutAlign="center center">
+            <ul>
+              <li>Jan Klädtke</li>
+              <li>Postanschrift:</li>
+              <li>Dagobertstraße 65</li>
+              <li>50668 Köln</li>
+              <li>E-Mail: jan.klaedtke@qschool.de</li>
+            </ul>
+          </div>
+        </cdk-virtual-scroll-viewport>
+      </div>
+    </mat-card>
+  </section>
+  
+  <app-footer></app-footer>
+</app-background>

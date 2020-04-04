@@ -1,9 +1,5 @@
 
-
-<canvas #canvas>
-</canvas>
-<section id="uniquesection" fxFlex fxLayout="column" [ngClass]="getTheme()" #sectionContainer>
+<section fxFlex fxLayout="column" [ngClass]="getTheme()">
   <app-nav></app-nav>
   <router-outlet></router-outlet>
-  <app-footer></app-footer>
 </section>

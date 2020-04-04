@@ -18,28 +18,28 @@
           </div>
         </div>
         <div fxLayout="column" fxLayoutGap="7px" style="width: 200px; margin-bottom: 5px;">
-          <mat-checkbox formControlName="learner" (change)="setupForm()">Ich möchte Lernen</mat-checkbox>
-          <mat-checkbox formControlName="teacher" (change)="setupForm()">Ich möchte Unterrichten</mat-checkbox>
-          <mat-checkbox formControlName="enterprise" (change)="setupForm()">Ich bin Selbständiger</mat-checkbox>
+          <mat-checkbox formControlName="learner" (change)="setupForm()"><span>Ich möchte Lernen</span></mat-checkbox>
+          <mat-checkbox formControlName="teacher" (change)="setupForm()"><span>Ich möchte Unterrichten</span></mat-checkbox>
+          <mat-checkbox formControlName="enterprise" (change)="setupForm()"><span>Ich bin Selbständiger</span></mat-checkbox>
         </div>
         <mat-form-field>
-          <mat-label>Email</mat-label>
+          <mat-label><span>Email</span></mat-label>
           <input matInput formControlName="email">
         </mat-form-field>
         <mat-form-field>
-          <mat-label>Name</mat-label>
+          <mat-label><span>Name</span></mat-label>
           <input matInput formControlName="name">
         </mat-form-field>
         <div *ngIf="registerForm.value.teacher === true" formArrayName="skills" style="width: 200px;">
           <mat-form-field *ngFor="let skill of getFormControllArr(); let i = index">
-            <mat-label>Skill</mat-label>
+            <mat-label><span>Skill</span></mat-label>
             <input matInput [formControlName]="i">
             <mat-icon *ngIf="i !== getFormControllArrLength() - 1 || (getFormControllArrLength()===3)" class="pointer-icon" matSuffix (click)="removeSkill(i)">remove</mat-icon>
             <mat-icon *ngIf="i === getFormControllArrLength() - 1 && (getFormControllArrLength()!==3)" class="pointer-icon" matSuffix (click)="addSkill()">add</mat-icon>
           </mat-form-field>
         </div>
         <mat-form-field *ngIf="registerForm.value.enterprise === true">
-          <mat-label>Branche</mat-label>
+          <mat-label><span>Branche</span></mat-label>
           <input matInput formControlName="industry">
         </mat-form-field>
         <div class="dsgvo-checkbox" fxLayout fxLayoutAlign="start center">
@@ -47,7 +47,7 @@
           <span class="datenschutz"><a [routerLink]="['/dsgvo']">Datenschutzbedingungen</a> zustimmen</span>
         </div>
         <div class="form-button-register" fxLayout fxLayoutAlign="center center" style="width: 200px;">
-          <button mat-flat-button color="accent" type="submit" [disabled]="!(registerForm.status==='VALID')">Anmelden</button>
+          <button mat-flat-button color="accent" type="submit" [disabled]="!(registerForm.status==='VALID')"><span>Anmelden</span></button>
         </div>
       </div>
     </form>
