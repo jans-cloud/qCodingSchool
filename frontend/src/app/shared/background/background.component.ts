@@ -8,6 +8,8 @@ import { ThemingService } from '../services/theming.service';
 })
 export class BackgroundComponent implements OnInit {
 
+  screenHeight;
+  screenWidth;
   constructor(private theme: ThemingService) {}
 
   ngOnInit(): void {
@@ -19,18 +21,22 @@ export class BackgroundComponent implements OnInit {
   @ViewChild("sectionContainer", {static: true}) sectionContainer: ElementRef;
   @HostListener('window:resize', ['$event'])
   onResize(event?) {
-    clearInterval(this.intervall);
     const screenHeight = this.sectionContainer.nativeElement.offsetHeight;
     const screenWidth = this.sectionContainer.nativeElement.offsetWidth;
-    this.canvas.nativeElement.width = screenWidth;
-    this.canvas.nativeElement.height = screenHeight;
-    this.ctx = this.canvas.nativeElement.getContext('2d');
-    this.columns = this.canvas.nativeElement.height / this.fontSize;
-    this.drops = [];
-    for (let i = 0; i < this.columns; i++) {
-      this.drops[i] = 1;
+    if (screenHeight !== this.screenHeight || screenWidth !== this.screenWidth) {
+      clearInterval(this.intervall);
+      this.screenHeight = screenHeight;
+      this.screenWidth = screenWidth;
+      this.canvas.nativeElement.width = this.screenWidth;
+      this.canvas.nativeElement.height = this.screenHeight;
+      this.ctx = this.canvas.nativeElement.getContext('2d');
+      this.columns = this.canvas.nativeElement.height / this.fontSize;
+      this.drops = [];
+      for (let i = 0; i < this.columns; i++) {
+        this.drops[i] = 1;
+      }
+      this.intervall = setInterval(this.draw.bind(this), 85);
     }
-    this.intervall = setInterval(this.draw.bind(this), 85);
   }
 
   // Initialising the canvas
