@@ -1,5 +1,4 @@
 @import './styles/mat-themes.scss';
-@import url('https://fonts.googleapis.com/css?family=Fira+Mono:400');
 
 /* You can add global styles to this file, and also import other style files */
 $theme: $light-theme;
@@ -15,4 +14,8 @@ $theme: $light-theme;
 
 
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body {
+  margin: 0;
+  font-family: 'Fira Mono', monospace;
+  // font-family: Roboto, "Helvetica Neue", sans-serif
+ }
