@@ -14,6 +14,7 @@ import { LandingMobileComponent } from './landing-mobile/landing-mobile.componen
 import { BackgroundModule } from '../shared/background/background.module';
 import { FooterModule } from '../shared/footer/footer.module';
 
+
 @NgModule({
   declarations: [
     LandingComponent,

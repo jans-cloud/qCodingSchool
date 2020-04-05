@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { trigger, transition, style, animate, state } from '@angular/animations';
 import { ThemingService } from '../../shared/services/theming.service';
-import { MatIconRegistry } from "@angular/material/icon";
-import { DomSanitizer } from "@angular/platform-browser";
+
 
 @Component({
   selector: 'app-landing-desktop',
@@ -39,24 +38,7 @@ export class LandingDesktopComponent implements OnInit {
   state = "enter";
 
 
-  constructor(private theme: ThemingService, private matIconRegistry: MatIconRegistry, private domSanitizer: DomSanitizer) {
-    this.matIconRegistry.addSvgIcon(
-      "enterprise",
-      this.domSanitizer.bypassSecurityTrustResourceUrl("../../../assets/svg/enterprise.svg")
-    );
-    this.matIconRegistry.addSvgIcon(
-      "teach",
-      this.domSanitizer.bypassSecurityTrustResourceUrl("../../../assets/svg/teach.svg")
-    );
-    this.matIconRegistry.addSvgIcon(
-      "learn",
-      this.domSanitizer.bypassSecurityTrustResourceUrl("../../../assets/svg/learn.svg")
-    );
-    this.matIconRegistry.addSvgIcon(
-      "intro",
-      this.domSanitizer.bypassSecurityTrustResourceUrl("../../../assets/svg/intro.svg")
-    );
-  }
+  constructor(private theme: ThemingService) {}
 
   ngOnInit(): void {
   }
