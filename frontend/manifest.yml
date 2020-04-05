@@ -19,7 +19,7 @@ applications:
   timeout: 180
   name: qSchool-Frontend-dev
   buildpack: sdk-for-nodejs
-  command: npm run prod
+  command: npm run serve:ssr
   memory: 256MB
   domain: eu-gb.mybluemix.net
   host: qschool-dev
