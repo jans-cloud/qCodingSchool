@@ -5,8 +5,8 @@ applications:
   buildpack: nodejs_buildpack
   command: npm run prod
   memory: 256MB
-  domain: eu-de.mybluemix.net
-  host: qschool
+  domain: qschool.de
+  host: wwww
 - instances: 1
   timeout: 180
   name: qSchool-Frontend-stage
