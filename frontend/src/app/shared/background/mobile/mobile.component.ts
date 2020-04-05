@@ -23,7 +23,7 @@ export class MobileComponent implements OnInit {
   onResize(event?) {
     const screenHeight = this.sectionContainer.nativeElement.offsetHeight;
     const screenWidth = this.sectionContainer.nativeElement.offsetWidth;
-    if (screenHeight !== this.screenHeight || screenWidth !== this.screenWidth) {
+    if (!this.screenHeight && !this.screenWidth) {
       clearInterval(this.intervall);
       this.screenHeight = screenHeight;
       this.screenWidth = screenWidth;
