@@ -9,11 +9,11 @@ if (ENVIRONMENT === 'local') {
 }
 
 if (ENVIRONMENT === 'dev') {
-  registrationUrl = 'https://qschool-dev.eu-gb.mybluemix.net/register/confirm?regtoken=';
+  registrationUrl = 'https://qschool-dev.eu-de.mybluemix.net/register/confirm?regtoken=';
 }
 
 if (ENVIRONMENT === 'stage') {
-  registrationUrl = 'https://qschool-stage.eu-gb.mybluemix.net/register/confirm?regtoken=';
+  registrationUrl = 'https://qschool-stage.eu-de.mybluemix.net/register/confirm?regtoken=';
 }
 
 if (ENVIRONMENT === 'prod') {

@@ -22,12 +22,12 @@ function deleteTestData() {
 function deleteVerifications() {
   setInterval(() => {
     try {
-      const deleteTime = Date.now() - (60000 * 60);
+      const deleteTime = Date.now() - 300000;
       EmailVerificationModel.deleteMany({ created: { $lte: deleteTime } });
     } catch (error) {
       console.log(error);
     }
-  }, (60000 * 60));
+  }, 300000);
 }
 
 
