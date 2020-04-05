@@ -19,4 +19,19 @@ function deleteTestData() {
   }, 180000);
 }
 
-export default deleteTestData;
+function deleteVerifications() {
+  setInterval(() => {
+    try {
+      const deleteTime = Date.now() - (60000 * 60);
+      EmailVerificationModel.deleteMany({ created: { $lte: deleteTime } });
+    } catch (error) {
+      console.log(error);
+    }
+  }, (60000 * 60));
+}
+
+
+export {
+  deleteVerifications,
+  deleteTestData,
+};

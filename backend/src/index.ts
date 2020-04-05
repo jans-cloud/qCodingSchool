@@ -11,7 +11,7 @@ import { PORT, DATABASE_URL, ENVIRONMENT } from './utils/env/env';
 import config from './utils/config/mongodb';
 import getLogger from './utils/logger/logger';
 
-import deleteTestData from './services/cronjobs/deleteTestData';
+import { deleteTestData, deleteVerifications } from './services/cronjobs/deleteTestData';
 
 const logger = getLogger('index');
 
@@ -31,6 +31,8 @@ mongoose.connect(DATABASE_URL!, config, (error: any) => {
     logger.info('Connected to Database');
     if (ENVIRONMENT !== 'prod') {
       deleteTestData();
+    } else {
+      deleteVerifications();
     }
   }
 });
