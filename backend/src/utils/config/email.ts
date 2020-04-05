@@ -13,11 +13,11 @@ if (ENVIRONMENT === 'dev') {
 }
 
 if (ENVIRONMENT === 'stage') {
-  registrationUrl = 'http://localhost:4200/register/confirm?regtoken=';
+  registrationUrl = 'https://qschool-stage.eu-gb.mybluemix.net/register/confirm?regtoken=';
 }
 
 if (ENVIRONMENT === 'prod') {
-  registrationUrl = 'http://localhost:4200/register/confirm?regtoken=';
+  registrationUrl = 'https://www.qschool.de/register/confirm?regtoken=';
 }
 
 const config = {
