@@ -3,15 +3,15 @@ applications:
   timeout: 180
   name: qSchool-Frontend-prod
   buildpack: nodejs_buildpack
-  command: npm run prod
+  command: npm run serve:ssr
   memory: 256MB
-  domain: eu-gb.mybluemix.net
-  host: qschool
+  domain: qschool.de
+  host: www
 - instances: 1
   timeout: 180
   name: qSchool-Frontend-stage
   buildpack: nodejs_buildpack
-  command: npm run prod
+  command: npm run serve:ssr
   memory: 256MB
   domain: eu-gb.mybluemix.net
   host: qschool-stage
