@@ -56,22 +56,24 @@
 
 
 
-<mat-card class="confirm-form" *ngIf="accountCreatedMessage" color="primary" [@formInsertRemoveTrigger]="state" fxLayout="column" fxLayoutAlign="center center">
-  <mat-label><mat-icon class="message-icon succes-color">email</mat-icon></mat-label>
-  <mat-label fxLayout="column" fxLayoutAlign="center center"><span class="label-message">Anmeldung erfolgreich</span></mat-label>
-  <div class="message-fields">
-    <p>
-      Wir haben Ihnen einen Link zum Abschluss Ihrer Anmeldung an
-      <span class="font-accent customer-mail">{{customerEmail}}</span>
-      <span fxLayout fxLayoutAlign="center center">gesendet.</span>
-    </p>
-    <p>
-      Bitte bestätigen Sie ihre Email Adresse durch klicken auf den Link.
-    </p>
-    <p>
-      Prüfen Sie bitte Ihren Spam-Ordner, sollten Sie keine Email erhalten haben.
-    </p>
-  </div>
+<mat-card *ngIf="accountCreatedMessage" color="primary" [@formInsertRemoveTrigger]="state" fxLayout="column" fxLayoutAlign="center center">
+  <cdk-virtual-scroll-viewport itemSize="10" class="scrolling-viewport">
+    <mat-label><mat-icon class="message-icon succes-color">email</mat-icon></mat-label>
+    <mat-label fxLayout="column" fxLayoutAlign="center center"><span class="label-message">Anmeldung erfolgreich</span></mat-label>
+    <div class="message-fields">
+      <p>
+        Wir haben Ihnen einen Link zum Abschluss Ihrer Anmeldung an
+        <span class="font-accent customer-mail">{{customerEmail}}</span>
+        <span fxLayout fxLayoutAlign="center center">gesendet.</span>
+      </p>
+      <p>
+        Bitte bestätigen Sie ihre Email Adresse durch klicken auf den Link.
+      </p>
+      <p>
+        Prüfen Sie bitte Ihren Spam-Ordner, sollten Sie keine Email erhalten haben.
+      </p>
+    </div>
+  </cdk-virtual-scroll-viewport>
 </mat-card>
 
 <mat-card *ngIf="accountErrorMessage" color="primary" [@formInsertRemoveTrigger]="state" fxLayout="column" fxLayoutAlign="center center">
