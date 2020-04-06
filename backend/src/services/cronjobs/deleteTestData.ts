@@ -19,15 +19,19 @@ function deleteTestData() {
   }, 180000);
 }
 
+// 3600000
 function deleteVerifications() {
+  const time = 180000;
   setInterval(() => {
     try {
-      const deleteTime = Date.now() - 3600000;
-      EmailVerificationModel.deleteMany({ created: { $lte: deleteTime } });
+      const deleteTime = Date.now() - time;
+      EmailVerificationModel.deleteMany({ created: { $lte: deleteTime } }).then((res) => {
+        console.log('Deleting: ', res.n);
+      });
     } catch (error) {
       console.log(error);
     }
-  }, 3600000);
+  }, time);
 }
 
 
