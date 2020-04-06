@@ -20,7 +20,7 @@ class NewEmailVerification {
 
   readonly dsgvo: boolean;
 
-  readonly created: number;
+  readonly created: Date;
 
   constructor(email: string, name: string, learner: boolean, teacher: boolean,
     enterprise: boolean, industry: string, skills: [string], dsgvo: boolean, token: string) {
@@ -33,7 +33,7 @@ class NewEmailVerification {
     this.industry = industry;
     this.skills = skills;
     this.dsgvo = dsgvo;
-    this.created = Date.now();
+    this.created = new Date();
   }
 }
 

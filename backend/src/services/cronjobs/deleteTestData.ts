@@ -6,7 +6,7 @@ import EmailVerificationModel from '../../apis/accounts/models/registration/emai
 function deleteTestData() {
   setInterval(() => {
     try {
-      const deleteTime = Date.now() - 180000;
+      const deleteTime = new Date((new Date()).getHours() - 1);
       AccountModel.deleteMany({ created: { $lte: deleteTime } }, (error) => {
         console.log(error);
       });
@@ -24,7 +24,7 @@ function deleteVerifications() {
   const time = 180000 * 10;
   setInterval(() => {
     try {
-      const deleteTime = Date.now() - time;
+      const deleteTime = new Date((new Date()).getHours() - 1);
       EmailVerificationModel.deleteMany({ created: { $lte: deleteTime } }).then((res) => {
         console.log('Deleting: ', res.n);
       });

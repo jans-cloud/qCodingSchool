@@ -17,9 +17,9 @@ class NewAccount {
 
   readonly dsgvo: boolean;
 
-  readonly created: number;
+  readonly created: Date;
 
-  readonly updated: number;
+  readonly updated: Date;
 
   constructor(email: string, name: string, learner: boolean, teacher: boolean,
     enterprise: boolean, industry: string, skills: [string], dsgvo: boolean) {
@@ -31,8 +31,8 @@ class NewAccount {
     this.industry = industry;
     this.skills = skills;
     this.dsgvo = dsgvo;
-    this.created = Date.now();
-    this.updated = Date.now();
+    this.created = new Date();
+    this.updated = new Date();
   }
 }
 
