@@ -21,7 +21,7 @@ function deleteTestData() {
 
 // 3600000
 function deleteVerifications() {
-  const time = 180000;
+  const time = 180000 * 10;
   setInterval(() => {
     try {
       const deleteTime = Date.now() - time;
