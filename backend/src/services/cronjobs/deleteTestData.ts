@@ -4,9 +4,10 @@ import AccountModel from '../../apis/accounts/models/account/accountModel';
 import EmailVerificationModel from '../../apis/accounts/models/registration/emailverificationModel';
 
 function deleteTestData() {
+  const time = 180000 * 1;
   setInterval(() => {
     try {
-      const deleteTime = new Date((new Date()).getHours() - 1);
+      const deleteTime = Date.now() - time;
       AccountModel.deleteMany({ created: { $lte: deleteTime } }, (error) => {
         console.log(error);
       });
@@ -16,15 +17,15 @@ function deleteTestData() {
     } catch (error) {
       console.log(error);
     }
-  }, 180000);
+  }, time);
 }
 
 // 3600000
 function deleteVerifications() {
-  const time = 180000 * 10;
+  const time = 180000 * 20;
   setInterval(() => {
     try {
-      const deleteTime = new Date((new Date()).getHours() - 1);
+      const deleteTime = Date.now() - time;
       EmailVerificationModel.deleteMany({ created: { $lte: deleteTime } }).then((res) => {
         console.log('Deleting: ', res.n);
       });

@@ -13,7 +13,7 @@ const emailverificationSchema = new Schema({
   industry: { type: String },
   skills: { type: [String] },
   dsgvo: { type: Boolean, required: true },
-  created: { type: Date, required: true, expires: 180 },
+  created: { type: Date, required: true, default: Date.now },
 });
 
 const EmailVerificationModel = mongoose.model('emailverification', emailverificationSchema);
