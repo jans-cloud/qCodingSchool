@@ -1,4 +1,4 @@
-<mat-card *ngIf="false" color="primary" [@formInsertRemoveTrigger]="state" class="login-form">
+<mat-card *ngIf="!accountCreatedMessage && !accountErrorMessage" color="primary" [@formInsertRemoveTrigger]="state" class="login-form">
   <mat-label fxLayout="column" fxLayoutAlign="center center"><span class="label">Jetzt mitmachen!</span></mat-label>
   <!--Form One-->
   <cdk-virtual-scroll-viewport itemSize="10" class="scrolling-viewport">
@@ -56,7 +56,7 @@
 
 
 
-<mat-card *ngIf="true" color="primary" [@formInsertRemoveTrigger]="state">
+<mat-card *ngIf="accountCreatedMessage" color="primary" [@formInsertRemoveTrigger]="state">
   <mat-label fxLayout="column" fxLayoutAlign="center center"><mat-icon class="message-icon succes-color">email</mat-icon></mat-label>
     <mat-label fxLayout="column" fxLayoutAlign="center center"><span class="label-message">Anmeldung erfolgreich</span></mat-label>
   <cdk-virtual-scroll-viewport itemSize="10" class="scrolling-viewport-succes">
