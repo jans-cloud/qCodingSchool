@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   backendUrl: "http://localhost:3000/",
-  supportMail: 'support@qSchool.com',
+  supportMail: 'jan.klaedtke@qSchool.de',
 };
 
 /*

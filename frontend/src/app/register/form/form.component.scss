@@ -33,6 +33,10 @@ mat-card {
   font-family: 'Fira Mono', monospace;
 }
 
+.confirm-form {
+  max-height: 70vh !important;
+}
+
 .hide-pwicon {
   cursor: pointer;
 }
@@ -108,6 +112,7 @@ mat-error {
 }
 
 .customer-mail {
+  text-align: center;
   margin: 8px 0;
   font-size: 1.15em;
 }
