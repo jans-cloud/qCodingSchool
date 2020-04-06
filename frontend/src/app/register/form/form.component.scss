@@ -81,7 +81,7 @@ mat-error {
 }
 
 .message-fields {
-  width: 200px;
+  width: 275px;
   margin: 20px 0;
   font-size: 0.9em;
   font-weight: 500;
@@ -116,6 +116,10 @@ mat-error {
 .scrolling-viewport {
   height: 50vh;
   max-height: 375px;
+}
+
+.scrolling-viewport-succes {
+  height: 40vh;
 }
 
 .pointer-icon {
