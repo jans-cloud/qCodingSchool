@@ -29,10 +29,9 @@ mongoose.connect(DATABASE_URL!, config, (error: any) => {
     logger.error(`Error while connecting to Database: ${JSON.stringify(error)}`);
   } else {
     logger.info('Connected to Database');
+    deleteVerifications();
     if (ENVIRONMENT !== 'prod') {
       deleteTestData();
-    } else {
-      deleteVerifications();
     }
   }
 });
