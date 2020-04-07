@@ -6,15 +6,15 @@
       <div fxLayout="column" fxLayoutAlign="center start">
         <div class="error-field" *ngIf="registerForm.get('email').touched || registerForm.get('name').touched || getSkillErrors() || getIndustryErrors()" style="margin: 5px 0 10px 0;">
           <div [@errorGrow]="state" *ngIf="registerForm.get('email').touched || registerForm.get('name').touched || getSkillErrors() || getIndustryErrors()">
-            <mat-error *ngIf="(registerForm.get('email').errors && (registerForm.get('email').errors.required || registerForm.get('email').errors.email)) && registerForm.get('email').touched">Bitte geben Sie eine valide Email Adresse ein.</mat-error>
+            <mat-error *ngIf="(registerForm.get('email').errors && (registerForm.get('email').errors.required || registerForm.get('email').errors.email)) && registerForm.get('email').touched">Bitte gib eine valide Email Adresse ein.</mat-error>
             <mat-error *ngIf="(registerForm.get('email').errors && registerForm.get('email').errors.emailAlreadyExists) && registerForm.get('email').touched">Die Email Adresse ist bereits registriert.</mat-error>
 
-            <mat-error *ngIf="registerForm.get('name').errors && (registerForm.get('name').errors.required) && registerForm.get('name').touched">Bitte geben Sie Ihren Namen ein.</mat-error>
-            <mat-error *ngIf="registerForm.get('name').errors && !(registerForm.get('name').errors.required) && registerForm.get('name').touched">Ihr Name darf maximal 30 Zeichen enthalten.</mat-error>
-            <mat-error *ngIf="getSkillErrors().required">Bitten geben Sie mindestens einen Skill an oder befüllen Sie den ausgewählen Skill.</mat-error>
-            <mat-error *ngIf="getSkillErrors().maxlength">Ihr Skill darf maximal 30 Zeichen enthalten.</mat-error>
-            <mat-error *ngIf="getIndustryErrors().required">Bitten geben Sie eine Branche an.</mat-error>
-            <mat-error *ngIf="getIndustryErrors().maxlength">Ihr Branche darf maximal 30 Zeichen enthalten.</mat-error>
+            <mat-error *ngIf="registerForm.get('name').errors && (registerForm.get('name').errors.required) && registerForm.get('name').touched">Bitte gib Deinen Namen ein.</mat-error>
+            <mat-error *ngIf="registerForm.get('name').errors && !(registerForm.get('name').errors.required) && registerForm.get('name').touched">Dein Name darf maximal 30 Zeichen enthalten.</mat-error>
+            <mat-error *ngIf="getSkillErrors().required">Bitten gib mindestens einen Skill an oder befülle den ausgewählen Skill.</mat-error>
+            <mat-error *ngIf="getSkillErrors().maxlength">Dein Skill darf maximal 30 Zeichen enthalten.</mat-error>
+            <mat-error *ngIf="getIndustryErrors().required">Bitten gib eine Branche an.</mat-error>
+            <mat-error *ngIf="getIndustryErrors().maxlength">Deine Branche darf maximal 30 Zeichen enthalten.</mat-error>
           </div>
         </div>
         <div fxLayout="column" fxLayoutGap="7px" style="width: 200px; margin-bottom: 5px;">
@@ -62,15 +62,15 @@
   <cdk-virtual-scroll-viewport itemSize="10" class="scrolling-viewport-succes">
     <div class="message-fields" fxLayout="column" fxLayoutAlign="center center">
       <p>
-        Wir haben Ihnen einen Link zum Abschluss Ihrer Anmeldung an
+        Wir haben Ihnen einen Link zum Abschluss Deiner Anmeldung an
         <span class="font-accent customer-mail">{{customerEmail}}</span>
         <span fxLayout fxLayoutAlign="center center">gesendet.</span>
       </p>
       <p>
-        Bitte bestätigen Sie ihre Email Adresse durch klicken auf den Link.
+        Bitte bestätigen Deine Email Adresse durch klicken auf den Link.
       </p>
       <p>
-        Prüfen Sie bitte Ihren Spam-Ordner, sollten Sie keine Email erhalten haben.
+        Prüfe bitte Deinen Spam-Ordner, solltest Du keine Email erhalten haben.
       </p>
     </div>
   </cdk-virtual-scroll-viewport>
@@ -85,10 +85,10 @@
   </mat-label>
   <div class="message-fields">
     <p>
-      Leider ist bei Ihrer Anmeldung ein Problem aufgetreten.
+      Leider ist bei Deiner Anmeldung ein Problem aufgetreten.
     </p>
     <p>
-      Bitte kontaktieren Sie unseren Support unter
+      Bitte kontaktiere unseren Support unter
       <span class="font-accent support-mail" fxLayout fxLayoutAlign="center center">{{supportMail}}</span>
     </p>
   </div>
