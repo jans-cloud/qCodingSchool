@@ -16,7 +16,7 @@ function createEmailVerification(newUser: NewEmailVerification): Promise<any> {
         logger.error(`createEmailVerification: ${JSON.stringify(error)}`);
         return reject(error);
       }
-      logger.info(`createEmailVerification ${document}`);
+      logger.info(`createEmailVerification ${JSON.stringify(document)}`);
       return resolve(document);
     });
   });
@@ -29,7 +29,7 @@ function getEmailfromToken(regToken: string): Promise<any> {
         logger.error(`getEmailfromToken: ${JSON.stringify(error)}`);
         return reject(error);
       }
-      logger.info(`getEmailfromToken ${document}`);
+      logger.info(`getEmailfromToken ${JSON.stringify(document)}`);
       return resolve(document);
     });
   });
