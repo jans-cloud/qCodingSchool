@@ -15,7 +15,7 @@ const accountSchema = new Schema({
   skills: { type: [String] },
   dsgvo: { type: Boolean, required: true },
   created: { type: Date, required: true, default: Date.now },
-  updated: { type: Date, required: true },
+  updated: { type: Date, required: true, default: Date.now },
 });
 
 const AccountModel = mongoose.model('accounts', accountSchema);
